@@ -5,28 +5,6 @@
 
 A premium, SpaceX-inspired multi-page website dedicated to the future of Mars colonization and terraforming.
 
----
-
-## 🇵🇱 Język Polski
-
-### Krótki Opis
-Projekt MONTE – Oficjalna platforma Mars Orbital Network Terraform Exploration. Poznaj przyszłość kolonizacji Czerwonej Planety, od innowacyjnych technologii napędowych po proces terraformacji i budowy samowystarczalnych miast.
-
-### Dłuższy Opis
-Projekt MONTE (Mars Orbital Network Terraform Exploration) to kompleksowy program mający na celu przekształcenie Marsa w drugi dom dla ludzkości. Nasza strona prezentuje strategiczne filary misji: zaawansowaną technologię rakietową, etapy kolonizacji powierzchni, zarządzanie zasobami oraz analizę zagrożeń kosmicznych. Poprzez interaktywną oś czasu i szczegółowe opracowania techniczne, przybliżamy wizję uczynienia życia wieloplanetarnym. To nie tylko eksploracja – to fundament nowej cywilizacji.
-
----
-
-## 🇺🇸 English Language
-
-### Short Description
-MONTE Project – The official platform of Mars Orbital Network Terraform Exploration. Discover the future of Red Planet colonization, from innovative propulsion technologies to terraforming and building self-sustaining cities.
-
-### Long Description
-The MONTE Project (Mars Orbital Network Terraform Exploration) is a comprehensive program aimed at transforming Mars into a second home for humanity. Our website presents the strategic pillars of the mission: advanced rocket technology, surface colonization stages, resource management, and space hazard analysis. Through an interactive timeline and detailed technical studies, we bring closer the vision of making life multi-planetary. This is not just exploration – it is the foundation of a new civilization.
-
----
-
 ## 🚀 Kluczowe Sekcje / Key Sections
 
 - **Mission (Misja):** Strategic goals for long-term human survival.
