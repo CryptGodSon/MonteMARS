@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Oś Czasu Projektu MONTE: Poznaj realistyczny harmonogram kolonizacji Marsa — od pierwszych testów Starship po budowę samowystarczalnego miasta.">
+    <title>Projekt MONTE - Oś Czasu</title>
+    <link rel="icon" type="image/png" href="icon/faviconmars.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="MONTE Logo" class="site-logo">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="misja.html">MISJA</a>
+            <a href="technologia.html">TECHNOLOGIA</a>
+            <a href="kolonizacja.html">KOLONIZACJA</a>
+            <a href="zasoby.html">ZASOBY</a>
+            <a href="zagrozenia.html">ZAGROŻENIA</a>
+            <a href="os-czasu.html" class="active">OŚ CZASU</a>
+        </nav>
+        <div class="menu-toggle">
+            &#9776;
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay loop muted playsinline class="background-video">
+                <source src="video/marsvideo.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">DROGA NA MARSA</h1>
+                <p class="hero-description">Realistyczny harmonogram ekspansji gatunku ludzkiego. Od pierwszych testów Starship po budowę samowystarczalnego miasta. Poznaj fakty i daty graniczne naszej misji.</p>
+            </div>
+
+            <div class="scroll-down">
+                <span>PRZEWIŃ</span>
+                <div class="chevron"></div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="timeline-container">
+                <!-- 2026 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content">
+                        <h4>Cargo Demo & ISRU</h4>
+                        <p>Pierwsze bezzałogowe misje Starship lądują na powierzchni Marsa (Utopia Planitia). Cel: demonstracja bezpiecznego lądowania 100t ładunku oraz pierwsze testy systemów ISRU (produkcja paliwa z atmosfery).</p>
+                    </div>
+                </div>
+
+                <!-- 2029 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2029</div>
+                    <div class="timeline-content">
+                        <h4>Pierwsze Kroki (Baza Alpha)</h4>
+                        <p>Lądowanie pierwszej załogowej misji Starship. Ustanowienie Bazy Alpha. Priorytet: budowa elektrowni słonecznej, instalacja pierwszych habitatów ciśnieniowych i stabilne wydobycie lodu wodnego.</p>
+                    </div>
+                </div>
+
+                <!-- 2035 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2035</div>
+                    <div class="timeline-content">
+                        <h4>Ekspansja NASA & SpaceX</h4>
+                        <p>Połączenie sił sektora komercyjnego i agencji państwowych. Baza Alpha staje się węzłem międzynarodowym. Rozpoczęcie stałej produkcji żywności w biodomach oraz budowa pierwszej marsjańskiej huty.</p>
+                    </div>
+                </div>
+
+                <!-- 2040 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2040</div>
+                    <div class="timeline-content">
+                        <h4>Stała Kolonia</h4>
+                        <p>Populacja przekracza 100 osób. Przejście z trybu "ekspedycyjnego" na stałe osadnictwo. Powstanie pierwszych dzieci urodzonych na Marsie. Pierwsza regularna flota transportowa (10+ statków co 26 miesięcy).</p>
+                    </div>
+                </div>
+
+                <!-- 2050 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2050</div>
+                    <div class="timeline-content">
+                        <h4>Miasto Marsjańskie (Monte City)</h4>
+                        <p>Populacja: 10,000+ osób. Mars uzyskuje pełną niezależność surowcową. Monte City staje się centrum nauki i przemysłu kosmicznego, eksportując paliwo do misji w kierunku zewnętrznych planet Układu Słonecznego.</p>
+                    </div>
+                </div>
+
+                <!-- 2100 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2100+</div>
+                    <div class="timeline-content">
+                        <h4>Inżynieria Planetarna</h4>
+                        <p>Rozpoczęcie globalnych projektów terraformowania. Budowa orbitalnych luster i uwalnianie gazów cieplarnianych w celu zagęszczenia atmosfery. Horyzont czasowy zmian: 200–500 lat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">MONTE Project</div>
+            <div class="footer-links">
+                <a href="misja.html">Misja</a>
+                <a href="technologia.html">Technologia</a>
+                <a href="kolonizacja.html">Kolonizacja</a>
+                <a href="zasoby.html">Zasoby</a>
+                <a href="zagrozenia.html">Zagrożenia</a>
+                <a href="os-czasu.html">Oś Czasu</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Intersection Observer logic for scroll animations
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kolonizacja Marsa — Plan ekspansji MONTE od pierwszych baz lądowiskowych przez podziemne miasta po planetarną terraformację.">
+    <title>Projekt MONTE - Kolonizacja</title>
+    <link rel="icon" type="image/png" href="icon/faviconmars.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="MONTE Logo" class="site-logo">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="misja.html">MISJA</a>
+            <a href="technologia.html">TECHNOLOGIA</a>
+            <a href="kolonizacja.html" class="active">KOLONIZACJA</a>
+            <a href="zasoby.html">ZASOBY</a>
+            <a href="zagrozenia.html">ZAGROŻENIA</a>
+            <a href="os-czasu.html">OŚ CZASU</a>
+        </nav>
+        <div class="menu-toggle">
+            &#9776;
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay loop muted playsinline class="background-video">
+                <source src="video/marsvideo.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">ETAPY OSADNICTWA</h1>
+                <p class="hero-description">Plan utworzenia samowystarczalnej cywilizacji w sześciu etapach. Od bezzałogowych
+                    lądowań towarowych po stałe habitaty i początek transformacji planetarnej.</p>
+            </div>
+
+            <div class="scroll-down">
+                <span>PRZEWIŃ</span>
+                <div class="chevron"></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-container">
+
+                <h2 class="section-heading text-center">PLAN EKSPANSJI</h2>
+                <p class="section-text text-center" style="max-width:760px; margin: 0 auto 60px;">
+                    Kolonizacja Marsa przebiega w sześciu kolejnych, wzajemnie zależnych etapach. Każdy etap buduje na infrastrukturze poprzedniego — od pierwszych baz lądowiskowych, przez podziemne miasta, biosfery, aż po globalną terraformację planety.
+                </p>
+
+                <!-- ZAKŁADKI ETAPÓW -->
+                <div class="phase-tabs">
+                    <button class="phase-tab active" data-phase="1">ETAP 1</button>
+                    <button class="phase-tab" data-phase="2">ETAP 2</button>
+                    <button class="phase-tab" data-phase="3">ETAP 3</button>
+                    <button class="phase-tab" data-phase="4">ETAP 4</button>
+                    <button class="phase-tab" data-phase="5">ETAP 5</button>
+                    <button class="phase-tab" data-phase="6">ETAP 6</button>
+                </div>
+
+                <div class="phase-panels">
+
+                    <!-- ==================== ETAP 1 ==================== -->
+                    <div class="phase-panel active" data-phase="1">
+                        <div class="phase-label">ETAP 1 · DEKADA 2030–2040</div>
+                        <h2 class="phase-title">UTOPIA PLANITIA</h2>
+                        <p class="phase-subtitle">Równina Raju — pierwsza baza lądowiskowa</p>
+                        <div class="phase-divider"></div>
+                        <div class="phase-facts">
+                            <div class="fact-block">
+                                <span class="fact-label">LOKALIZACJA</span>
+                                <span class="fact-value">46.7°N, 117.5°E — Nizina Północna</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">PRIORYTET</span>
+                                <span class="fact-value">Produkcja paliwa, wody i tlenu</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">STATUS</span>
+                                <span class="fact-value phase-status s1">W PLANOWANIU</span>
+                            </div>
+                        </div>
+                        <div class="phase-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🧊</span>
+                                <div>
+                                    <strong>Podziemny Lód Wodny</strong>
+                                    <p>Chińska misja Zhurong i sonda MRO potwierdziły w tym rejonie ogromne pokłady lodu wodnego tuż pod powierzchnią — kluczowe dla produkcji metanu i tlenu.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🛬</span>
+                                <div>
+                                    <strong>Idealne Lądowisko</strong>
+                                    <p>Jedne z najrówniejszych terenów na Marsie — minimalne ryzyko dla lądowania statków klasy Starship. SpaceX oficjalnie wskazuje ten region jako priorytetowy.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏗️</span>
+                                <div>
+                                    <strong>Modułowa Baza ISRU</strong>
+                                    <p>Pierwsze autonomiczne roboty drukują bazy z regolitu i bazaltu metodą 3D. Reaktory Kilopower zapewniają zasilanie niezależne od słońca i burz pyłowych.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🚀</span>
+                                <div>
+                                    <strong>Centralny Hub Transportowy</strong>
+                                    <p>Lokalna produkcja paliwa metanowego (CH₄ + O₂) umożliwia tankowanie statków na miejscu. Utopia staje się pierwszym kosmicznym portem lotniczym na Marsie.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== ETAP 2 ==================== -->
+                    <div class="phase-panel" data-phase="2">
+                        <div class="phase-label">ETAP 2 · DEKADA 2040–2060</div>
+                        <h2 class="phase-title">THARSIS</h2>
+                        <p class="phase-subtitle">Jaskinie Lawowe — pierwsze stałe podziemne miasta</p>
+                        <div class="phase-divider"></div>
+                        <div class="phase-facts">
+                            <div class="fact-block">
+                                <span class="fact-label">LOKALIZACJA</span>
+                                <span class="fact-value">0°N, 250°E — Płaskowyż Wulkaniczny</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">PRIORYTET</span>
+                                <span class="fact-value">Stałe osadnictwo, ochrona radiacyjna</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">STATUS</span>
+                                <span class="fact-value phase-status s2">PRZYSZŁOŚCIOWY</span>
+                            </div>
+                        </div>
+                        <div class="phase-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🌋</span>
+                                <div>
+                                    <strong>Tunele Lawowe (Lava Tubes)</strong>
+                                    <p>Naturalne korytarze skalne o średnicy nawet 250 metrów, uformowane przez dawną aktywność wulkaniczną. Grube stropy stanowią całkowitą barierę przed promieniowaniem kosmicznym.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌡️</span>
+                                <div>
+                                    <strong>Stabilność Termiczna</strong>
+                                    <p>Wewnątrz tuneli brak ekstremalnych wahań temperatury (od +20°C w dzień do –100°C nocą na powierzchni). Stałe warunki eliminują zmęczenie materiałów konstrukcyjnych.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏙️</span>
+                                <div>
+                                    <strong>Podziemne Miasta</strong>
+                                    <p>Po zhermetyzowaniu wejść tuneli odtworzymy ziemskie ciśnienie atmosferyczne — mieszkańcy poruszają się bez skafandrów. Pierwsze prawdziwe miasta na Marsie.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">⚡</span>
+                                <div>
+                                    <strong>Energia Geotermalna</strong>
+                                    <p>Aktywność wulkaniczna regionu Tharsis umożliwia pozyskiwanie energii geotermalnej ze szczelin skóry planety — niezawodne, lokalne źródło zasilania 24/7.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== ETAP 3 ==================== -->
+                    <div class="phase-panel" data-phase="3">
+                        <div class="phase-label">ETAP 3 · DEKADA 2060–2080</div>
+                        <h2 class="phase-title">VALLES MARINERIS</h2>
+                        <p class="phase-subtitle">Wielki Kanion Układu Słonecznego — pierwsze otwarte biosfery</p>
+                        <div class="phase-divider"></div>
+                        <div class="phase-facts">
+                            <div class="fact-block">
+                                <span class="fact-label">LOKALIZACJA</span>
+                                <span class="fact-value">13.9°S, 59.2°W (300.8°E) — Równik Marsa</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">PRIORYTET</span>
+                                <span class="fact-value">Biosfery, lokalna produkcja tlenu</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">STATUS</span>
+                                <span class="fact-value phase-status s3">WIZJA DŁUGOTERMINOWA</span>
+                            </div>
+                        </div>
+                        <div class="phase-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏔️</span>
+                                <div>
+                                    <strong>Największy Kanion Układu Słonecznego</strong>
+                                    <p>4 000 km długości, 700 km szerokości, 7 km głębokości. Ciśnienie na dnie kanionu jest naturalnie wyższe niż gdziekolwiek indziej na Marsie — kluczowe dla oddychania.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌿</span>
+                                <div>
+                                    <strong>Wielkie Biosfery</strong>
+                                    <p>Zadaszenia ze szklanych sfer rozpiętych między ścianami kanionu tworzą pierwsze środowiska z prawdziwą słodką wodą i roślinnością pochłaniającą CO₂ pod marsjańskim niebem.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">☀️</span>
+                                <div>
+                                    <strong>Naturalny Kolektor Ciepła</strong>
+                                    <p>Strome ściany kanionu pochłaniają promieniowanie słoneczne i utrzymują wyższe temperatury w dnie. Efekt szklarniowy wewnątrz biosfer wspomaga wzrost roślinności.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌍</span>
+                                <div>
+                                    <strong>Fundament Terraformacji</strong>
+                                    <p>Biosfery produkują tlen i pochłaniają CO₂ na coraz większą skalę. Valles Marineris staje się pierwszym centrum biologicznym napędzającym przyszłą terraformację atmosfery.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== ETAP 4 ==================== -->
+                    <div class="phase-panel" data-phase="4">
+                        <div class="phase-label">ETAP 4 · DEKADA 2080–2100</div>
+                        <h2 class="phase-title">HELLAS PLANITIA</h2>
+                        <p class="phase-subtitle">Głęboka Kotlina Hellaška — centrum terraformacji klimatycznej</p>
+                        <div class="phase-divider"></div>
+                        <div class="phase-facts">
+                            <div class="fact-block">
+                                <span class="fact-label">LOKALIZACJA</span>
+                                <span class="fact-value">42.4°S, 70.5°E — Hemisfera Południowa</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">PRIORYTET</span>
+                                <span class="fact-value">Terraformacja, tropikalne rolnictwo</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">STATUS</span>
+                                <span class="fact-value phase-status s2">KONCEPCYJNY</span>
+                            </div>
+                        </div>
+                        <div class="phase-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">⬇️</span>
+                                <div>
+                                    <strong>Najniższy Punkt Marsa</strong>
+                                    <p>Kotlina głęboka na ~7 km poniżej średniego poziomu Marsa — ciśnienie atmosferyczne jest tu o ~89% wyższe niż na równinach. Najlepsze naturalne warunki ciśnieniowe na planecie.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌡️</span>
+                                <div>
+                                    <strong>Najcieplejszy Region Marsa</strong>
+                                    <p>Temperatury w Hellas Planitia latem południkowym dochodzą do +30°C na dnie kotliny — unikalne warunki termiczne umożliwiające odkryte uprawy roślin w ciepłych sezonach.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌾</span>
+                                <div>
+                                    <strong>Centrum Rolnicze</strong>
+                                    <p>Połączenie najwyższego ciśnienia i najwyższych temperatur czyni Hellas idealnym miejscem dla pierwszych odkrytych farm hydroponicznych i eksperymentalnych upraw zewnętrznych.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌪️</span>
+                                <div>
+                                    <strong>Generator Klimatyczny</strong>
+                                    <p>Wielkie instalacje uwolnienia gazów cieplarnianych (np. SF₆ lub CF₄) skoncentrowane w Hellas Planitia wywołają efekt kaskadowy podgrzania atmosfery całej planety.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== ETAP 5 ==================== -->
+                    <div class="phase-panel" data-phase="5">
+                        <div class="phase-label">ETAP 5 · DEKADA 2100–2150</div>
+                        <h2 class="phase-title">PLANUM BOREUM</h2>
+                        <p class="phase-subtitle">Arktyczna Czapa Polarna — globalna sieć zasobów wodnych</p>
+                        <div class="phase-divider"></div>
+                        <div class="phase-facts">
+                            <div class="fact-block">
+                                <span class="fact-label">LOKALIZACJA</span>
+                                <span class="fact-value">87°N, 0°E — Biegun Północny Marsa</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">PRIORYTET</span>
+                                <span class="fact-value">Oceanizacja, globalne zasoby H₂O</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">STATUS</span>
+                                <span class="fact-value phase-status s3">WIZJA STULECIA</span>
+                            </div>
+                        </div>
+                        <div class="phase-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🧊</span>
+                                <div>
+                                    <strong>Największy Rezerwuar Wody na Marsie</strong>
+                                    <p>Warstwa wodnego lodu o grubości ~1.8 km pokrywa obszar porównywalny z Grenlandią. Gdyby stopić całą czapę, woda pokryłaby Marsa oceanem głębokim na ok. 36 metrów.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">☁️</span>
+                                <div>
+                                    <strong>Inicjacja Cyklu Hydrologicznego</strong>
+                                    <p>Kontrolowane topnienie lodu polarnego za pomocą luster orbitalnych i ocieplenia atmosfery uruchomi naturalny cykl opadów — deszcz i śnieg na całym Marsie.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🔬</span>
+                                <div>
+                                    <strong>Poszukiwanie Życia</strong>
+                                    <p>Badania radarowe MRO wykazały prawdopodobne jezioro ciekłej wody pod lodem polarnym. Baza w Planum Boreum stanie się centrum astrobiologii i poszukiwania marsjańskich mikrobów.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🌐</span>
+                                <div>
+                                    <strong>Globalna Infrastruktura Wodna</strong>
+                                    <p>Sieć rurociągów i stacji pompowni transportuje wodę z bieguna do kolonii na całym Marsie — od Utopii na północy, przez równik Valles Marineris, po Hellas na południu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== ETAP 6 ==================== -->
+                    <div class="phase-panel" data-phase="6">
+                        <div class="phase-label">ETAP 6 · DEKADA 2150+</div>
+                        <h2 class="phase-title">OLYMPUS MONS</h2>
+                        <p class="phase-subtitle">Najwyższy Szczyt Układu Słonecznego — symbol nowej cywilizacji</p>
+                        <div class="phase-divider"></div>
+                        <div class="phase-facts">
+                            <div class="fact-block">
+                                <span class="fact-label">LOKALIZACJA</span>
+                                <span class="fact-value">18.65°N, 226.2°E — Płaskowyż Tharsis</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">PRIORYTET</span>
+                                <span class="fact-value">Obserwatoria, stacja energii słonecznej</span>
+                            </div>
+                            <div class="fact-block">
+                                <span class="fact-label">STATUS</span>
+                                <span class="fact-value phase-status s3">WIZJA STULECIA</span>
+                            </div>
+                        </div>
+                        <div class="phase-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏔️</span>
+                                <div>
+                                    <strong>27 km nad Powierzchnią</strong>
+                                    <p>Olympus Mons to tarczowy wulkan o podstawie wielkości Polski. Jego szczyt wznosi się na 27 km — ponad trzy razy wyżej niż Mount Everest. Wierzchołek sięga poza zwartą część atmosfery.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🔭</span>
+                                <div>
+                                    <strong>Obserwatorium Klasy Kosmicznej</strong>
+                                    <p>Szczyt wznosi się ponad gęstą warstwę atmosfery i burzy pyłowych. Idealna lokalizacja dla wielkiego obserwatorium astronomicznego klasy kosmicznej bez potrzeby wynoszenia na orbitę.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">☀️</span>
+                                <div>
+                                    <strong>Stacja Energii Słonecznej</strong>
+                                    <p>Na takiej wysokości panele solarne pracują z ~40% wyższą wydajnością niż na powierzchni — brak mgły i kurzu pyłowego. Energia mikrofal transmitowana na równiny zasila wszystkie bazy MONTE.</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🗽</span>
+                                <div>
+                                    <strong>Symbol Nowej Cywilizacji</strong>
+                                    <p>Kiedy Valles Marineris rozkwitnie, a Hellas stanie się zielona — szczyt Olympus stanie się symbolem ludzkości, która nie tylko przetrwała, ale zmienił oblicze drugiej planety Układu Słonecznego.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.phase-panels -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">MONTE Projekt</div>
+            <div class="footer-links">
+                <a href="misja.html">Misja</a>
+                <a href="technologia.html">Technologia</a>
+                <a href="kolonizacja.html">Kolonizacja</a>
+                <a href="zasoby.html">Zasoby</a>
+                <a href="zagrozenia.html">Zagrożenia</a>
+                <a href="os-czasu.html">Oś Czasu</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs   = document.querySelectorAll('.phase-tab');
+        const panels = document.querySelectorAll('.phase-panel');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const phase = tab.getAttribute('data-phase');
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.querySelector(`.phase-panel[data-phase="${phase}"]`).classList.add('active');
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
