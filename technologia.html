@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Technologia MONTE: Baza kluczowych technologii misji marsjańskiej — napędy, reaktory, systemy życia, AI i terraformowanie.">
+    <title>Projekt MONTE - Technologia</title>
+    <link rel="icon" type="image/png" href="icon/faviconmars.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="MONTE Logo" class="site-logo">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="misja.html">MISJA</a>
+            <a href="technologia.html" class="active">TECHNOLOGIA</a>
+            <a href="kolonizacja.html">KOLONIZACJA</a>
+            <a href="zasoby.html">ZASOBY</a>
+            <a href="zagrozenia.html">ZAGROŻENIA</a>
+            <a href="os-czasu.html">OŚ CZASU</a>
+        </nav>
+        <div class="menu-toggle">
+            &#9776;
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay loop muted playsinline class="background-video">
+                <source src="video/marsvideo.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">SIŁA RAKIET</h1>
+                <p class="hero-description">Nasza niezrównana architektura nośna oraz systemy napędów nowej generacji to
+                    zaawansowana <b>TECHNOLOGIA</b>, która otwiera prawdziwe wrota do eksploracji Układu Słonecznego.
+                    Poniżej — pełna baza kluczowych technologii Projektu MONTE.</p>
+            </div>
+
+            <div class="scroll-down">
+                <span>PRZEWIŃ</span>
+                <div class="chevron"></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-container" style="max-width: 1400px;">
+
+                <h2 class="section-heading text-center">BAZA TECHNOLOGII MISJI</h2>
+                <p class="section-text text-center" style="max-width: 760px; margin: 0 auto 50px;">
+                    15 kluczowych technologii niezbędnych do realizacji Projektu MONTE — od silników rakietowych po
+                    terraformację. Każda z nich jest kategoryzowana i oznaczona aktualnym statusem gotowości.
+                </p>
+
+                <!-- Legenda statusów -->
+                <div class="severity-legend" style="margin-bottom: 20px;">
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background:#00cc55; box-shadow: 0 0 8px rgba(0,204,85,0.5);">
+                        </div>
+                        <span>GOTOWE</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background:#ff8c00; box-shadow: 0 0 8px rgba(255,140,0,0.5);">
+                        </div>
+                        <span>W TESTACH</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background:#4ab4ff; box-shadow: 0 0 8px rgba(74,180,255,0.5);">
+                        </div>
+                        <span>W BADANIACH</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background:#cc66ff; box-shadow: 0 0 8px rgba(204,102,255,0.5);">
+                        </div>
+                        <span>KONCEPCJA</span>
+                    </div>
+                </div>
+
+                <!-- Filtry kategorii -->
+                <div class="threat-filters" id="tech-filters">
+                    <button class="filter-btn active" data-filter="all">WSZYSTKIE</button>
+                    <button class="filter-btn" data-filter="naped">NAPĘD</button>
+                    <button class="filter-btn" data-filter="energia">ENERGIA</button>
+                    <button class="filter-btn" data-filter="zycie">PODTRZYMANIE ŻYCIA</button>
+                    <button class="filter-btn" data-filter="ochrona">OCHRONA</button>
+                    <button class="filter-btn" data-filter="komunikacja">KOMUNIKACJA</button>
+                    <button class="filter-btn" data-filter="ai">SZTUCZNA INTELIGENCJA</button>
+                    <button class="filter-btn" data-filter="robotyka">ROBOTYKA</button>
+                    <button class="filter-btn" data-filter="budownictwo">BUDOWNICTWO</button>
+                    <button class="filter-btn" data-filter="terraformowanie">TERRAFORMOWANIE</button>
+                </div>
+
+                <p class="results-count" id="tech-count">WYŚWIETLONO: 24 / 24</p>
+
+                <!-- Siatka kart technologicznych -->
+                <div class="threats-grid" id="tech-grid">
+
+                    <!-- 1 -->
+                    <div class="tech-card-item" data-cat="naped" data-status="gotowe">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Silnik Raptor 3 (SpaceX)</span>
+                                <span class="tci-cat cat-naped">Napęd</span>
+                            </div>
+                            <span class="tci-status status-gotowe">GOTOWE</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Ciąg:</b> 230 tf (poziom morza) / 269 tf (próżnia)</li>
+                            <li><b>Paliwo:</b> CH₄ + O₂ — produkowane na Marsie (ISRU)</li>
+                            <li><b>Zaleta:</b> wielokrotnego użytku, pełna regeneracja silnika</li>
+                            <li><b>Isp:</b> ~350 s (poziom morza) / ~380 s (próżnia)</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="tech-card-item" data-cat="naped" data-status="testy">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Napęd Jądrowy Termiczny (NTP)</span>
+                                <span class="tci-cat cat-naped">Napęd</span>
+                            </div>
+                            <span class="tci-status status-testy">W TESTACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Isp:</b> ~900 s (2× wyższy niż chemiczny)</li>
+                            <li><b>Czas Ziemia–Mars:</b> ~90 dni (vs ~210 chemicznie)</li>
+                            <li><b>Program:</b> NASA DRACO / BWXT (start testów 2027)</li>
+                            <li><b>Paliwo:</b> Wodór + rdzeń reaktora jądrowego (HEU)</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="tech-card-item" data-cat="naped" data-status="gotowe">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Jonowy Napęd Solarny (SEP)</span>
+                                <span class="tci-cat cat-naped">Napęd</span>
+                            </div>
+                            <span class="tci-status status-gotowe">GOTOWE</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Isp:</b> 1 000–10 000 s — najwyższa wydajność paliwowa</li>
+                            <li><b>Zastosowanie:</b> ładunki cargo (bez ludzi)</li>
+                            <li><b>Przykład:</b> Dawn, Hayabusa2, BepiColombo</li>
+                            <li><b>Ciąg:</b> niski (~0,1 N), ale ciągły przez miesiące</li>
+                        </ul>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="tech-card-item" data-cat="energia" data-status="testy">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Reaktor Kilopower (KRUSTY)</span>
+                                <span class="tci-cat cat-energia">Energia</span>
+                            </div>
+                            <span class="tci-status status-testy">W TESTACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Moc:</b> 1–10 kW elektrycznych (fisja U-235)</li>
+                            <li><b>Test:</b> Nevada Test Site, 2018 — sukces (NASA / NNSA)</li>
+                            <li><b>Cel:</b> zasilanie pierwszych baz — niezależnie od słońca</li>
+                            <li><b>Masa:</b> ~1 500 kg z osłoną radiacyjną</li>
+                        </ul>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="tech-card-item" data-cat="energia" data-status="badania">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Reaktor Fuzyjny Kompaktowy</span>
+                                <span class="tci-cat cat-energia">Energia</span>
+                            </div>
+                            <span class="tci-status status-badania">W BADANIACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Firmy:</b> Commonwealth Fusion (SPARC), TAE Technologies</li>
+                            <li><b>Cel:</b> reaktor komercyjny do ~2030–2035 r.</li>
+                            <li><b>Moc docelowa:</b> 40–200 MW w kompaktowej obudowie</li>
+                            <li><b>Paliwo:</b> deuter + tryt (D-T), przyszłość: D-He3</li>
+                        </ul>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="tech-card-item" data-cat="zycie" data-status="gotowe">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">MOXIE — Produkcja Tlenu z CO₂</span>
+                                <span class="tci-cat cat-zycie">Podtrzymanie Życia</span>
+                            </div>
+                            <span class="tci-status status-gotowe">GOTOWE</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Test:</b> Perseverance rover, Mars — od 2021 do 2023 r.</li>
+                            <li><b>Wydajność:</b> 6–10 g O₂/h (docelowo: kg/h w skali MOXIE-2)</li>
+                            <li><b>Reakcja:</b> CO₂ → O₂ + CO (elektroliza w ~800°C)</li>
+                            <li><b>Cel:</b> skalowanie do 2–3 kg O₂/h dla pierwszej bazy</li>
+                        </ul>
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="tech-card-item" data-cat="zycie" data-status="gotowe">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Zamknięty Obieg Wody (ECLSS)</span>
+                                <span class="tci-cat cat-zycie">Podtrzymanie Życia</span>
+                            </div>
+                            <span class="tci-status status-gotowe">GOTOWE</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Efektywność ISS:</b> 98% odzysku wody</li>
+                            <li><b>Metody:</b> kondensacja, destylacja odśrodkowa, filtracja biologiczna</li>
+                            <li><b>Cel Mars:</b> upgrade do 99,9%+ przy kolonii 100+ osób</li>
+                            <li><b>Źródła wody:</b> oddech, mocz, pot, kondensacja powietrza</li>
+                        </ul>
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="tech-card-item" data-cat="zycie" data-status="badania">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Sztuczna Fotosynteza</span>
+                                <span class="tci-cat cat-zycie">Podtrzymanie Życia</span>
+                            </div>
+                            <span class="tci-status status-badania">W BADANIACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Zasada:</b> CO₂ + H₂O + światło → O₂ + organika</li>
+                            <li><b>Wydajność:</b> 3× wyższa niż naturalna fotosynteza roślin</li>
+                            <li><b>Zastosowanie:</b> produkcja tlenu i pożywienia jednocześnie</li>
+                            <li><b>Badania:</b> Caltech, MIT, Berkeley Solar Energy Center</li>
+                        </ul>
+                    </div>
+
+                    <!-- 9 -->
+                    <div class="tech-card-item" data-cat="ochrona" data-status="gotowe">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Osłony Polietylenowe (GCR Shield)</span>
+                                <span class="tci-cat cat-ochrona">Ochrona</span>
+                            </div>
+                            <span class="tci-status status-gotowe">GOTOWE</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Materiał:</b> polietylen wysycony wodorem (HDPE, PE-B)</li>
+                            <li><b>Skuteczność:</b> redukcja dawki promieniowania kosmicznego o 50%</li>
+                            <li><b>Grubość:</b> ~20 g/cm² — ok. 20 cm warstwy ochronnej</li>
+                            <li><b>Zastosowanie:</b> moduły sypialne i krytyczne stacje pracy</li>
+                        </ul>
+                    </div>
+
+                    <!-- 10 -->
+                    <div class="tech-card-item" data-cat="ochrona" data-status="testy">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Skafandry Nowej Generacji</span>
+                                <span class="tci-cat cat-ochrona">Ochrona</span>
+                            </div>
+                            <span class="tci-status status-testy">W TESTACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Projekty:</b> Collins Aerospace Axiom Suit / MIT BioSuit</li>
+                            <li><b>Ciśnienie:</b> ~57 kPa pure O₂ (vs 101 kPa tradycyjne)</li>
+                            <li><b>Funkcje:</b> samonaprawiające włókna, monitoring integralności</li>
+                            <li><b>Mobilność:</b> 300% lepsza niż Apollo / EMU na ISS</li>
+                        </ul>
+                    </div>
+
+                    <!-- 11 -->
+                    <div class="tech-card-item" data-cat="komunikacja" data-status="testy">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Laser Komunikacyjny (LCRD/LLCD)</span>
+                                <span class="tci-cat cat-komunikacja">Komunikacja</span>
+                            </div>
+                            <span class="tci-status status-testy">W TESTACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Status:</b> NASA LCRD aktywny od 2021 r. (GEO orbit)</li>
+                            <li><b>Prędkość:</b> 200 Mbit/s vs. 200 kbit/s (łącze radiowe)</li>
+                            <li><b>Opóźnienie:</b> 3–22 min (zależnie od pozycji Ziemia-Mars)</li>
+                            <li><b>Cel:</b> system relay z konstelacją satelitów na orbicie Marsa</li>
+                        </ul>
+                    </div>
+
+                    <!-- 12 -->
+                    <div class="tech-card-item" data-cat="ai" data-status="badania">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Autonomiczne AI Medyczne</span>
+                                <span class="tci-cat cat-ai">Sztuczna Inteligencja</span>
+                            </div>
+                            <span class="tci-status status-badania">W BADANIACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Cel:</b> chirurgia robotyczna + diagnostyka AI bez lekarza</li>
+                            <li><b>Opóźnienie:</b> niemożliwa teleoperacja (3–22 min lagiem)</li>
+                            <li><b>Projekt:</b> NASA Ames / MIT CSAIL / ESA MedAI</li>
+                            <li><b>Zakres:</b> diagnostyka obrazowa, drobne operacje, farmakologia</li>
+                        </ul>
+                    </div>
+
+                    <!-- 13 -->
+                    <div class="tech-card-item" data-cat="budownictwo" data-status="badania">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Druk 3D z Regolitu — Materiałoznawstwo</span>
+                                <span class="tci-cat cat-budownictwo">Budownictwo</span>
+                            </div>
+                            <span class="tci-status status-badania">W BADANIACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Metoda 1:</b> cementacja siarką — roztopiona siarka wiąże regolit bez wody (Sulfur
+                                Concrete)</li>
+                            <li><b>Metoda 2:</b> spiekanie laserowe — wiązka laserowa topi regolit warstwa po warstwie
+                            </li>
+                            <li><b>Wytrzymałość:</b> sulfobeton z regolitu ~50 MPa — porównywalny z ziemskim betonem
+                            </li>
+                            <li><b>Zaleta kluczowa:</b> 100% lokalnych surowców — zero importu materiałów z Ziemi</li>
+                        </ul>
+                    </div>
+
+                    <!-- 14 -->
+                    <div class="tech-card-item" data-cat="terraformowanie" data-status="koncepcja">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Sieć Luster Orbitalnych</span>
+                                <span class="tci-cat cat-terraformowanie">Terraformowanie</span>
+                            </div>
+                            <span class="tci-status status-koncepcja">KONCEPCJA</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Cel:</b> topienie czap polarnych CO₂ i H₂O na Marsie</li>
+                            <li><b>Skala:</b> lustra o łącznej średnicy ~150 km w punkcie L1</li>
+                            <li><b>Efekt:</b> wzrost ciśnienia atmosferycznego o ~15 Pa/rok</li>
+                            <li><b>Czas:</b> 500–1000 lat do oddychalnej atmosfery</li>
+                        </ul>
+                    </div>
+
+                    <!-- 15 -->
+                    <div class="tech-card-item" data-cat="terraformowanie" data-status="badania">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Edycja Genów (CRISPR-Mars)</span>
+                                <span class="tci-cat cat-terraformowanie">Terraformowanie</span>
+                            </div>
+                            <span class="tci-status status-badania">W BADANIACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Cel 1:</b> adaptacja mikroorganizmów produkujących O₂ do gleby marsiańskiej</li>
+                            <li><b>Cel 2:</b> inżynieria roślin dla niskiego ciśnienia i środowiska CO₂</li>
+                            <li><b>Cel 3:</b> bakterie metanogenne produkujące gazy cieplarniane</li>
+                            <li><b>Badania:</b> NASA Ames, MIT Media Lab, iGEM Foundation</li>
+                        </ul>
+                    </div>
+
+                    <!-- 16 — AI: Zarządzanie Kolońią -->
+                    <div class="tech-card-item" data-cat="ai" data-status="badania">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">AI Zarządzania Bazą (ColonyOS)</span>
+                                <span class="tci-cat cat-ai">Sztuczna Inteligencja</span>
+                            </div>
+                            <span class="tci-status status-badania">W BADANIACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Funkcja:</b> optymalizacja zasobów, logistyki i energii kolonii</li>
+                            <li><b>Dane wejściowe:</b> 1000+ czujników środowiskowych, ISRU, magazyny</li>
+                            <li><b>Decyzje:</b> przydział tlenu, wody, żywności w czasie rzeczywistym</li>
+                            <li><b>Analogia:</b> Starlink Autopilot + ISS ECLSS — połączone i autonomiczne</li>
+                        </ul>
+                    </div>
+
+                    <!-- 17 — AI: Prognozowanie Burz -->
+                    <div class="tech-card-item" data-cat="ai" data-status="testy">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">AI Prognozowania Burz Pyłowych</span>
+                                <span class="tci-cat cat-ai">Sztuczna Inteligencja</span>
+                            </div>
+                            <span class="tci-status status-testy">W TESTACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Cel:</b> przewidywanie globalnych burz pyłowych z 7-dniowym wyprzedzeniem</li>
+                            <li><b>Dane:</b> MRO, MAVEN, Curiosity, Perseverance — dane z 20+ lat obserwacji</li>
+                            <li><b>Krytyczność:</b> burze blokują 100% energii solarnej na tygodnie</li>
+                            <li><b>Projekt:</b> NASA JPL / DeepMind Mars Weather AI</li>
+                        </ul>
+                    </div>
+
+                    <!-- 18 — AI: Asystent Naukowy -->
+                    <div class="tech-card-item" data-cat="ai" data-status="gotowe">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">AI Asystent Naukowy (AEGIS)</span>
+                                <span class="tci-cat cat-ai">Sztuczna Inteligencja</span>
+                            </div>
+                            <span class="tci-status status-gotowe">GOTOWE</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Status:</b> aktywny na Curiosity i Perseverance od 2016 r.</li>
+                            <li><b>Funkcja:</b> autonomiczny wybór celów naukowych do badania</li>
+                            <li><b>Wyniki:</b> 10× więcej badań niż przy pełnej kontroli z Ziemi</li>
+                            <li><b>Następnik:</b> AEGIS-3 z LLM — pełne rozumowanie naukowe na miejscu</li>
+                        </ul>
+                    </div>
+
+                    <!-- 19 — Robotyka: Rover Eksploracyjny -->
+                    <div class="tech-card-item" data-cat="robotyka" data-status="gotowe">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Autonomiczny Rover Eksploracyjny</span>
+                                <span class="tci-cat cat-robotyka">Robotyka</span>
+                            </div>
+                            <span class="tci-status status-gotowe">GOTOWE</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Przykłady:</b> Perseverance, Curiosity, Zhurong, ExoMars Rosalind</li>
+                            <li><b>Mobilność:</b> do 200 m/dzień autonomicznie (hazard avoidance AI)</li>
+                            <li><b>Sensory:</b> radar RIMFAX, spektrometr, kamera SuperCam, MEDA</li>
+                            <li><b>Nowa generacja:</b> rover z wiertnią 2 km, odzysk próbek, helikoptery</li>
+                        </ul>
+                    </div>
+
+                    <!-- 20 — Robotyka: Roboty Budowlane -->
+                    <div class="tech-card-item" data-cat="robotyka" data-status="badania">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Autonomiczne Roboty Górnicze ISRU</span>
+                                <span class="tci-cat cat-robotyka">Robotyka</span>
+                            </div>
+                            <span class="tci-status status-badania">W BADANIACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Zadania:</b> wiercenie, wydobycie regolitu i lodu, transport do bazy ISRU</li>
+                            <li><b>Projekt:</b> NASA RASSOR (Regolith Advanced Surface Systems Operations Robot)</li>
+                            <li><b>Autonomia:</b> pełna — brak operatora, nawigacja laser LIDAR + SLAM</li>
+                            <li><b>Wydajność:</b> RASSOR 2.0 — 100 kg regolitu/h z głębokości do 50 cm</li>
+                        </ul>
+                    </div>
+
+                    <!-- 21 — Robotyka: Egzoszkielet -->
+                    <div class="tech-card-item" data-cat="robotyka" data-status="testy">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Egzoszkielet Marsiański (Mars Exo)</span>
+                                <span class="tci-cat cat-robotyka">Robotyka</span>
+                            </div>
+                            <span class="tci-status status-testy">W TESTACH</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Cel:</b> wzmocnienie siły i wytrzymałości kolonizatorów podczas EVA</li>
+                            <li><b>Wzmocnienie:</b> 5× siła, 3× wytrzymałość mięśniowa</li>
+                            <li><b>Zasilanie:</b> baterie litowo-cierarne + odzysk energii z ruchu</li>
+                            <li><b>Badania:</b> DARPA Warrior Web, NASA / ReWalk Robotics</li>
+                        </ul>
+                    </div>
+
+                    <!-- 22 — Terraformowanie: Gazy Cieplarniane -->
+                    <div class="tech-card-item" data-cat="terraformowanie" data-status="koncepcja">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Wstrzykiwanie Gazów Cieplarnianych</span>
+                                <span class="tci-cat cat-terraformowanie">Terraformowanie</span>
+                            </div>
+                            <span class="tci-status status-koncepcja">KONCEPCJA</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Gazy:</b> SF₆, CF₄, C₂F₆ — 10 000× silniejszy efekt cieplarniany niż CO₂</li>
+                            <li><b>Cel:</b> podwyższenie temperatury średnio o +10°C w ciągu 100 lat</li>
+                            <li><b>Produkcja:</b> fabryki ISRU syntetyzujące gazy z lokalnych atomów F i C</li>
+                            <li><b>Problem:</b> wymagana ciągła produkcja — Mars traci atmosferę przez wiatr słoneczny
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 23 — Terraformowanie: Asteroidy -->
+                    <div class="tech-card-item" data-cat="terraformowanie" data-status="koncepcja">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Kierowanie Asteroid i Komet</span>
+                                <span class="tci-cat cat-terraformowanie">Terraformowanie</span>
+                            </div>
+                            <span class="tci-status status-koncepcja">KONCEPCJA</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Cel:</b> impakty w bieguny — uwolnienie H₂O i CO₂ z lodu komety</li>
+                            <li><b>Energia impaktu:</b> 1 km komet = ~10²² J (ekwiwalent 10¹ bomb atomowych)</li>
+                            <li><b>Efekt:</b> jeden impakt może podnieść ciśnienie o 0,5–2 Pa</li>
+                            <li><b>Weryfikacja koncepcji:</b> NASA DART (2022) — próba zmiany orbity asteroidy</li>
+                        </ul>
+                    </div>
+
+                    <!-- 24 — Terraformowanie: Pole Magnetyczne -->
+                    <div class="tech-card-item" data-cat="terraformowanie" data-status="koncepcja">
+                        <div class="tci-top">
+                            <div>
+                                <span class="tci-name">Sztuczne Pole Magnetyczne</span>
+                                <span class="tci-cat cat-terraformowanie">Terraformowanie</span>
+                            </div>
+                            <span class="tci-status status-koncepcja">KONCEPCJA</span>
+                        </div>
+                        <div class="tci-divider"></div>
+                        <ul class="tci-specs">
+                            <li><b>Cel:</b> ochrona atmosfery przed rozdziercaniem przez wiatr słoneczny</li>
+                            <li><b>Koncepcja:</b> generator dipola magnetycznego w punkcie L1 Mars-Słońce</li>
+                            <li><b>Propozycja:</b> NASA Planetary Science Vision 2050 Workshop</li>
+                            <li><b>Efekt:</b> zatrzymanie erozji atmosfery — niezbędne do stałej terraformacji</li>
+                        </ul>
+                    </div>
+
+                </div><!-- /.threats-grid -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">MONTE Projekt</div>
+            <div class="footer-links">
+                <a href="misja.html">Misja</a>
+                <a href="technologia.html">Technologia</a>
+                <a href="kolonizacja.html">Kolonizacja</a>
+                <a href="zasoby.html">Zasoby</a>
+                <a href="zagrozenia.html">Zagrożenia</a>
+                <a href="os-czasu.html">Oś Czasu</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('#tech-filters .filter-btn');
+            const cards = document.querySelectorAll('.tech-card-item');
+            const counter = document.getElementById('tech-count');
+            const total = cards.length;
+
+            function updateCounter() {
+                const visible = document.querySelectorAll('.tech-card-item:not(.hidden)').length;
+                counter.textContent = `WYŚWIETLONO: ${visible} / ${total}`;
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+                    cards.forEach(card => {
+                        const show = filter === 'all' || card.getAttribute('data-cat') === filter;
+                        card.classList.toggle('hidden', !show);
+                    });
+                    updateCounter();
+                });
+            });
+
+            updateCounter();
+        });
+    </script>
+</body>
+
+</html>

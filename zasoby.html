@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zasoby i Infrastruktura Wydobywcza: Budowa podwalin i systemów pozyskiwania wody i tlenu na Czerwonej Planecie w Projekcie MONTE.">
+    <title>Projekt MONTE - Zasoby</title>
+    <link rel="icon" type="image/png" href="icon/faviconmars.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="MONTE Logo" class="site-logo">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="misja.html">MISJA</a>
+            <a href="technologia.html">TECHNOLOGIA</a>
+            <a href="kolonizacja.html">KOLONIZACJA</a>
+            <a href="zasoby.html" class="active">ZASOBY</a>
+            <a href="zagrozenia.html">ZAGROŻENIA</a>
+            <a href="os-czasu.html">OŚ CZASU</a>
+        </nav>
+        <div class="menu-toggle">
+            &#9776;
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- Wideo tła sekcji hero -->
+            <video autoplay loop muted playsinline class="background-video">
+                <source src="video/marsvideo.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-overlay"></div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">ENERGIA MARSA</h1>
+                <p class="hero-description">Ekstrakcja podziemnego lodu wodnego i pozyskiwanie dwutlenku węgla z
+                    atmosfery to kluczowe <b>ZASOBY</b> potrzebne, by zaadaptować Marsa. Autonomiczne fabryki
+                    solarno-jądrowe zajmują się zaawansowanym przetwarzaniem materii w celu stworzenia sztucznej
+                    biosfery do oddychania. Poniżej znajdziesz pełną kategoryzację surowców dostępnych w naszych
+                    sektorach.</p>
+            </div>
+
+            <div class="scroll-down">
+                <span>PRZEWIŃ</span>
+                <div class="chevron"></div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             BAZA DANYCH SUROWCÓW — ilości na całym Marsie
+             ============================================= -->
+        <section class="content-section" style="padding-top: 80px; background: #030303;">
+            <div class="content-container" style="max-width: 1500px;">
+
+                <h2 class="section-heading text-center">BAZA DANYCH SUROWCÓW MARSA</h2>
+                <p class="section-text text-center" style="max-width:780px;margin:0 auto 20px;">
+                    Szacowane globalne zasoby Marsa obliczone na podstawie danych spektrometrycznych sond NASA, ESA i CNSA.
+                    Wartości odnoszą się do całej masy skorupy (głębokość 50 km) oraz atmosfery planety.
+                </p>
+                <p class="db-note">
+                    📐 <b>Podstawy obliczeń:</b> Masa atmosfery ≈ 2,47 × 10<sup>16</sup> kg &nbsp;|&nbsp;
+                    Masa skorupy (50 km) ≈ 2,10 × 10<sup>22</sup> kg &nbsp;|&nbsp;
+                    Dane: GRS/Mars Odyssey · APXS/Curiosity · MRO/HiRISE · Mars Express
+                </p>
+
+                <!-- Legenda Kolorów (Zasoby) -->
+                <div class="legend-container" style="margin-bottom: 20px;">
+                    <div class="legend-item"><div class="legend-dot" style="background: #4ab4ff;"></div> GAZOWE I LOTNE</div>
+                    <div class="legend-item"><div class="legend-dot" style="background: #ff8c00;"></div> KONSTRUKCYJNE</div>
+                    <div class="legend-item"><div class="legend-dot" style="background: #cc66ff;"></div> HIGH-TECH I ENERGIA</div>
+                </div>
+
+                <!-- Filtry -->
+                <div class="threat-filters" id="db-filters">
+                    <button class="filter-btn active" data-filter="all">WSZYSTKIE</button>
+                    <button class="filter-btn" data-filter="gazowe">GAZOWE I LOTNE</button>
+                    <button class="filter-btn" data-filter="konstrukcyjne">KONSTRUKCYJNE</button>
+                    <button class="filter-btn" data-filter="hightech">HIGH-TECH I ENERGIA</button>
+                </div>
+
+                <p class="db-count" id="db-count">Wyświetlono: 27 surowców</p>
+
+                <!-- Tabela -->
+                <div class="resource-db-wrapper">
+                    <table class="resource-db-table" id="resource-db-table">
+                        <thead>
+                            <tr>
+                                <th class="sortable" data-col="name">Surowiec <span class="sort-arrow">↕</span></th>
+                                <th>Symbol</th>
+                                <th>Kategoria</th>
+                                <th class="sortable" data-col="kg">Szacowana ilość na Marsie <span class="sort-arrow">↕</span></th>
+                                <th>Podstawa obliczenia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resource-db-body"></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="resources-section">
+            <div class="content-container">
+
+                <!-- TECH TREE UI -->
+                <div class="tech-tree">
+                    <h2 class="tech-tree-title">ANALIZA ZAPOTRZEBOWANIA ISRU</h2>
+                    <p class="tech-tree-desc">Wybierz moduł technologiczny z poniższego zestawienia, aby
+                        automatycznie namierzyć i podświetlić surowce niezbędne do jego budowy. System wskaże
+                        precyzyjną lokalizację wymaganych zasobów w naszych katalogach.</p>
+                    <div class="tech-nodes">
+                        <div class="tech-node" id="tech-fuel">
+                            <div class="tech-icon">🚀</div>
+                            <div class="tech-info">
+                                <h4>Paliwo Rakietowe</h4>
+                                <p>Oczekuje na analizę</p>
+                            </div>
+                        </div>
+                        <div class="tech-node" id="tech-solar">
+                            <div class="tech-icon">⚡</div>
+                            <div class="tech-info">
+                                <h4>Ogniwa Słoneczne</h4>
+                                <p>Oczekuje na analizę</p>
+                            </div>
+                        </div>
+                        <div class="tech-node" id="tech-habitat">
+                            <div class="tech-icon">🏘️</div>
+                            <div class="tech-info">
+                                <h4>Baza Habitatowa</h4>
+                                <p>Oczekuje na analizę</p>
+                            </div>
+                        </div>
+                        <div class="tech-node" id="tech-hull">
+                            <div class="tech-icon">🛡️</div>
+                            <div class="tech-info">
+                                <h4>Poszycie Statku</h4>
+                                <p>Oczekuje na analizę</p>
+                            </div>
+                        </div>
+                        <div class="tech-node" id="tech-reactor">
+                            <div class="tech-icon">☢️</div>
+                            <div class="tech-info">
+                                <h4>Reaktor Gwiezdny</h4>
+                                <p>Oczekuje na analizę</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END TECH TREE -->
+
+                <!-- KATEGORIA 1: GAZOWE I LOTNE -->
+                <details class="resource-category" open>
+                    <summary class="category-title">GAZOWE I LOTNE</summary>
+                    <div class="category-content-wrapper">
+                        <div class="resource-cards">
+                            <div class="resource-card" data-resource="h2o">
+                                <div class="resource-header">
+                                    <span class="resource-name">Lód Wodny (H2O)</span>
+                                    <span class="resource-availability high">BARDZO WYSOKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Woda pitna, tlen, paliwo wodorowe.</div>
+                            </div>
+                            <div class="resource-card" data-resource="co2">
+                                <div class="resource-header">
+                                    <span class="resource-name">Dwutlenek Węgla (CO2)</span>
+                                    <span class="resource-availability high">NIEOGRANICZONA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Produkcja tlenu, synteza metanu, chłodziwo.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Argon (Ar)</span>
+                                    <span class="resource-availability high">WYSOKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Silniki jonowe, osłona spawalnicza.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Neon i Krypton</span>
+                                    <span class="resource-availability low">ŚLADOWA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Lasery, oświetlenie specjalistyczne.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Amoniak (NH3)</span>
+                                    <span class="resource-availability medium">ŚREDNIA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Systemy chłodzenia, nawozy.</div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- KATEGORIA 2: KONSTRUKCYJNE I PRZEMYSŁOWE -->
+                <details class="resource-category">
+                    <summary class="category-title">KONSTRUKCYJNE I PRZEMYSŁOWE</summary>
+                    <div class="category-content-wrapper">
+                        <div class="resource-cards">
+                            <div class="resource-card" data-resource="regolit">
+                                <div class="resource-header">
+                                    <span class="resource-name">Regolit / Bazalt</span>
+                                    <span class="resource-availability high">NIEOGRANICZONA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Druk 3D baz, włókna bazaltowe, osłony.</div>
+                            </div>
+                            <div class="resource-card" data-resource="iron">
+                                <div class="resource-header">
+                                    <span class="resource-name">Żelazo (Fe)</span>
+                                    <span class="resource-availability high">WYSOKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Produkcja stali, ramy konstrukcyjne.</div>
+                            </div>
+                            <div class="resource-card" data-resource="silicon">
+                                <div class="resource-header">
+                                    <span class="resource-name">Krzem (Si)</span>
+                                    <span class="resource-availability high">WYSOKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Panele fotowoltaiczne, elektronika, szkło.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Siarka (S)</span>
+                                    <span class="resource-availability high">WYSOKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Beton siarkowy, kwas siarkowy.</div>
+                            </div>
+                            <div class="resource-card" data-resource="aluminium">
+                                <div class="resource-header">
+                                    <span class="resource-name">Aluminium (Al)</span>
+                                    <span class="resource-availability medium">ŚREDNIA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Stopy lotnicze, obudowy.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Chrom i Mangan</span>
+                                    <span class="resource-availability medium">ŚREDNIA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Stal nierdzewna, utwardzanie narzędzi.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Miedź (Cu)</span>
+                                    <span class="resource-availability low">NISKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Przewody elektryczne, elektronika.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Tytan (Ti)</span>
+                                    <span class="resource-availability medium">ŚREDNIA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Lekkie poszycia statków, superwytrzymałe ramy.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Nikiel (Ni)</span>
+                                    <span class="resource-availability high">WYSOKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Ogniwa baterii, nadprzewodniki, stopy.</div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- KATEGORIA 3: ZAAWANSOWANE TECHNOLOGIE I ENERGIA -->
+                <details class="resource-category">
+                    <summary class="category-title">HIGH-TECH I ENERGIA</summary>
+                    <div class="category-content-wrapper">
+                        <div class="resource-cards">
+                            <div class="resource-card" data-resource="antimatter">
+                                <div class="resource-header">
+                                    <span class="resource-name">Antymateria</span>
+                                    <span class="resource-availability rare">WYCHWYT ORBIT</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Napęd międzygwiezdny, terraformacja.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Neodym i Lantan</span>
+                                    <span class="resource-availability low">NISKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Magnesy, generatory, silniki.</div>
+                            </div>
+                            <div class="resource-card" data-resource="thorium">
+                                <div class="resource-header">
+                                    <span class="resource-name">Tor (Th)</span>
+                                    <span class="resource-availability low">NISKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Reaktory jądrowe.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Hel-3 (3He)</span>
+                                    <span class="resource-availability low">BARDZO NISKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Fuzja jądrowa.</div>
+                            </div>
+                            <div class="resource-card" data-resource="carbon">
+                                <div class="resource-header">
+                                    <span class="resource-name">Węgiel (Grafen)</span>
+                                    <span class="resource-availability high">WYSOKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Nanorurki węglowe, pancerze.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Itr i Europ</span>
+                                    <span class="resource-availability low">BARDZO NISKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Nadprzewodniki, czujniki kwantowe.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Złoto (Au)</span>
+                                    <span class="resource-availability low">BARDZO NISKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Złocenia obwodów, izolacja radiacyjna.</div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-name">Diament i Węgliki</span>
+                                    <span class="resource-availability low">NISKA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Wiertła łazików górniczych, soczewki optyczne.</div>
+                            </div>
+                            <div class="resource-card" data-resource="platinum">
+                                <div class="resource-header">
+                                    <span class="resource-name">Platyna (Pt)</span>
+                                    <span class="resource-availability low">ŚLADOWA</span>
+                                </div>
+                                <div class="resource-body"><b>Zastosowanie:</b> Najbardziej wydajne katalizatory i czujniki.</div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">MONTE Projekt</div>
+            <div class="footer-links">
+                <a href="misja.html">Misja</a>
+                <a href="technologia.html">Technologia</a>
+                <a href="kolonizacja.html">Kolonizacja</a>
+                <a href="zasoby.html">Zasoby</a>
+                <a href="zagrozenia.html">Zagrożenia</a>
+                <a href="os-czasu.html">Oś Czasu</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const techNodes = document.querySelectorAll('.tech-node');
+        const cards = document.querySelectorAll('.resource-card');
+
+        const recipes = {
+            'tech-fuel':    ['h2o', 'co2'],
+            'tech-solar':   ['silicon', 'platinum'],
+            'tech-habitat': ['regolit', 'iron'],
+            'tech-hull':    ['aluminium', 'carbon'],
+            'tech-reactor': ['antimatter', 'thorium']
+        };
+
+        // Ustaw domyślne etykiety
+        techNodes.forEach(n => n.querySelector('p').innerText = "GOTOWOŚĆ DO ANALIZY");
+
+        function clearResources() {
+            cards.forEach(card => card.classList.remove('active'));
+        }
+
+        techNodes.forEach(node => {
+            node.addEventListener('click', function () {
+                const isActive = this.classList.contains('active-tech');
+
+                // Resetuj wszystkie węzły
+                techNodes.forEach(n => {
+                    n.classList.remove('active-tech');
+                    n.querySelector('p').innerText = "GOTOWOŚĆ DO ANALIZY";
+                });
+                clearResources();
+
+                if (!isActive) {
+                    this.classList.add('active-tech');
+                    this.querySelector('p').innerText = "POBIERANIE DANYCH...";
+
+                    const requiredIds = recipes[this.id];
+                    if (requiredIds) {
+                        // Zamknij wszystkie kategorie
+                        document.querySelectorAll('details.resource-category').forEach(cat => cat.open = false);
+
+                        // Otwórz te z potrzebnymi surowcami i podświetl karty
+                        requiredIds.forEach(id => {
+                            const card = document.querySelector(`.resource-card[data-resource="${id}"]`);
+                            if (card) {
+                                card.classList.add('active');
+                                const details = card.closest('details');
+                                if (details) details.open = true;
+                            }
+                        });
+
+                        // Przewiń do pierwszego podświetlonego
+                        const firstActive = document.querySelector('.resource-card.active');
+                        if (firstActive) {
+                            firstActive.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+
+                        this.querySelector('p').innerText = "IDENTYFIKACJA ZAKOŃCZONA";
+                    }
+                }
+            });
+        });
+    });
+    </script>
+
+    <script>
+    /* =============================================
+       BAZA DANYCH SUROWCÓW — dane i logika
+       Masa atmosfery: P × A / g = 636 × 1.449e14 / 3.72 ≈ 2.477e16 kg
+       Masa skorupy 50km: V × ρ = (1.449e14 × 50000) × 2900 ≈ 2.101e22 kg
+       ============================================= */
+    const DB_RESOURCES = [
+        // ---- GAZOWE I LOTNE ----
+        { name: "Lód Wodny (H₂O)",         symbol: "H₂O",   cat: "gazowe",        kg: 3.7e18,  src: "Czapy polarne + depozyty podziemne; dane MRO, HiRISE, SHARAD" },
+        { name: "Dwutlenek Węgla (CO₂)",   symbol: "CO₂",   cat: "gazowe",        kg: 2.39e16, src: "Atm. × 96,5% (P=636 Pa, A=1,45×10¹⁴ m², g=3,72 m/s²)" },
+        { name: "Argon (Ar)",              symbol: "Ar",    cat: "gazowe",        kg: 4.78e14, src: "Atmosfera × 1,93% (dane Pathfinder / Curiosity SAM)" },
+        { name: "Neon (Ne)",              symbol: "Ne",    cat: "gazowe",        kg: 6.19e10, src: "Atmosfera × 2,5 ppm" },
+        { name: "Krypton (Kr)",           symbol: "Kr",    cat: "gazowe",        kg: 7.43e9,  src: "Atmosfera × 0,3 ppm" },
+        { name: "Amoniak (NH₃)",          symbol: "NH₃",   cat: "gazowe",        kg: 1e8,     src: "Szacunek geologiczny — ślady wulkaniczne (bardzo niepewne)" },
+        // ---- KONSTRUKCYJNE I PRZEMYSŁOWE ----
+        { name: "Regolit / Bazalt",        symbol: "—",     cat: "konstrukcyjne", kg: 2.17e17, src: "Warstwa 1m: 1,449×10¹⁴ m² × 1m × 1 500 kg/m³" },
+        { name: "Żelazo (Fe)",             symbol: "Fe",    cat: "konstrukcyjne", kg: 3.57e21, src: "Skorupa 50km × 17% — dane Mars Express / GRS Odyssey" },
+        { name: "Krzem (Si)",              symbol: "Si",    cat: "konstrukcyjne", kg: 4.31e21, src: "Skorupa 50km × 20,5% — dane spektrometryczne APXS" },
+        { name: "Siarka (S)",              symbol: "S",     cat: "konstrukcyjne", kg: 5.25e20, src: "Skorupa 50km × 2,5% — dane APXS/Curiosity (wys. niż Ziemia)" },
+        { name: "Aluminium (Al)",          symbol: "Al",    cat: "konstrukcyjne", kg: 1.47e21, src: "Skorupa 50km × 7% — dane GRS, Mars Odyssey" },
+        { name: "Chrom (Cr)",              symbol: "Cr",    cat: "konstrukcyjne", kg: 1.11e20, src: "Skorupa 50km × 0,53% — wyższe stężenie niż na Ziemi" },
+        { name: "Mangan (Mn)",             symbol: "Mn",    cat: "konstrukcyjne", kg: 9.45e19, src: "Skorupa 50km × 0,45%" },
+        { name: "Miedź (Cu)",              symbol: "Cu",    cat: "konstrukcyjne", kg: 1.05e18, src: "Skorupa 50km × 0,005%" },
+        { name: "Tytan (Ti)",              symbol: "Ti",    cat: "konstrukcyjne", kg: 1.26e20, src: "Skorupa 50km × 0,6% — dane GRS / Mars Odyssey" },
+        { name: "Nikiel (Ni)",             symbol: "Ni",    cat: "konstrukcyjne", kg: 2.73e19, src: "Skorupa 50km × 0,13%" },
+        // ---- HIGH-TECH I ENERGIA ----
+        { name: "Węgiel (Grafen)",         symbol: "C",     cat: "hightech",      kg: 2.10e19, src: "Skorupa 50km × ~0,1% + obliczony węgiel z atmosfery CO₂ (12/44)" },
+        { name: "Neodym (Nd)",             symbol: "Nd",    cat: "hightech",      kg: 3.15e17, src: "Skorupa 50km × 15 ppm (analogia do skorupy ziemskiej)" },
+        { name: "Lantan (La)",             symbol: "La",    cat: "hightech",      kg: 2.94e17, src: "Skorupa 50km × 14 ppm (analogia do skorupy ziemskiej)" },
+        { name: "Tor (Th)",                symbol: "Th",    cat: "hightech",      kg: 1.18e16, src: "Skorupa 50km × 0,56 ppm — dane GRS/Mars Odyssey (potwierdzone)" },
+        { name: "Hel-3 (³He)",             symbol: "³He",   cat: "hightech",      kg: 2.18e6,  src: "Regolit 1m × 0,01 ppb — implantacja wiatru słonecznego w regolit" },
+        { name: "Itr (Y)",                 symbol: "Y",     cat: "hightech",      kg: 4.20e16, src: "Skorupa 50km × 2 ppm" },
+        { name: "Europ (Eu)",              symbol: "Eu",    cat: "hightech",      kg: 1.26e15, src: "Skorupa 50km × 0,06 ppm" },
+        { name: "Złoto (Au)",              symbol: "Au",    cat: "hightech",      kg: 6.30e13, src: "Skorupa 50km × 0,003 ppm (analogia do Ziemi; wzbogacony przez impakty?)" },
+        { name: "Platyna (Pt)",            symbol: "Pt",    cat: "hightech",      kg: 4.20e13, src: "Skorupa 50km × 0,002 ppm — potencjalnie wzbogacona przez impakty meteorytowe" },
+        { name: "Diament i Węgliki",       symbol: "C*",    cat: "hightech",      kg: 1e10,    src: "Szacunek spekulatywny: ułamek ppb zawartości węgla w skorupie" },
+        { name: "Antymateria",             symbol: "p̄",     cat: "hightech",      kg: 1e-9,    src: "Praktycznie brak — musi być syntetyzowana w przyspieszaczach cząstek",
+          note: "Jeszcze nie odkryto na Marsie — możliwość odkrycia wynosi 1,77% (stan na 06/04/2026)" },
+    ];
+
+    const CAT_LABELS = { gazowe: "Gazowe", konstrukcyjne: "Konstrukcyjne", hightech: "High-Tech" };
+    const CAT_COLORS = { gazowe: "#4ab4ff", konstrukcyjne: "#ff8c00", hightech: "#cc66ff" };
+
+    function formatKg(kg) {
+        if (kg < 1e-6) return "&lt; 1 μg";
+        if (kg < 1e-3) return (kg * 1e6).toFixed(2) + " μg";
+        if (kg < 1)    return (kg * 1e3).toFixed(1) + " g";
+        if (kg < 1e3)  return kg.toFixed(0) + " kg";
+        if (kg < 1e6)  return (kg / 1e3).toFixed(1) + " tys. kg";
+        if (kg < 1e9)  return (kg / 1e6).toFixed(2) + " mln kg";
+        if (kg < 1e12) return (kg / 1e9).toFixed(2) + " mld kg";
+        // Notacja naukowa dla bardzo dużych liczb
+        const exp = Math.floor(Math.log10(kg));
+        const mantissa = (kg / Math.pow(10, exp)).toFixed(2);
+        return mantissa + " × 10<sup>" + exp + "</sup> kg";
+    }
+
+    let currentFilter = "all";
+    let sortCol = "kg";
+    let sortDir = -1; // -1 = malejąco
+
+    function renderTable() {
+        const tbody = document.getElementById("resource-db-body");
+        const count = document.getElementById("db-count");
+
+        let data = [...DB_RESOURCES];
+        if (currentFilter !== "all") {
+            data = data.filter(r => r.cat === currentFilter);
+        }
+
+        // Sortowanie
+        data.sort((a, b) => {
+            let va = sortCol === "kg" ? a.kg : a.name.toLowerCase();
+            let vb = sortCol === "kg" ? b.kg : b.name.toLowerCase();
+            if (va < vb) return sortDir;
+            if (va > vb) return -sortDir;
+            return 0;
+        });
+
+        tbody.innerHTML = data.map((r, i) => `
+            <tr>
+                <td class="db-name">
+                    ${r.name}
+                    ${r.note ? `<br><span class="db-note-inline">⚠ ${r.note}</span>` : ''}
+                </td>
+                <td class="db-symbol">${r.symbol}</td>
+                <td><span class="db-cat-badge" style="color:${CAT_COLORS[r.cat]};border-color:${CAT_COLORS[r.cat]}">${CAT_LABELS[r.cat]}</span></td>
+                <td class="db-qty">${formatKg(r.kg)}</td>
+                <td class="db-src">${r.src}</td>
+            </tr>
+        `).join("");
+
+        count.textContent = "Wyświetlono: " + data.length + " surowców";
+    }
+
+    // Filtry
+    document.querySelectorAll("#db-filters .filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll("#db-filters .filter-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            currentFilter = btn.getAttribute("data-filter");
+            renderTable();
+        });
+    });
+
+    // Sortowanie po nagłówku
+    document.querySelectorAll("#resource-db-table th.sortable").forEach(th => {
+        th.addEventListener("click", () => {
+            const col = th.getAttribute("data-col");
+            if (sortCol === col) {
+                sortDir *= -1;
+            } else {
+                sortCol = col;
+                sortDir = col === "kg" ? -1 : 1;
+            }
+            document.querySelectorAll("#resource-db-table th.sortable").forEach(t => {
+                t.querySelector(".sort-arrow").textContent = "↕";
+            });
+            th.querySelector(".sort-arrow").textContent = sortDir === 1 ? "↑" : "↓";
+            renderTable();
+        });
+    });
+
+    renderTable();
+    </script>
+</body>
+
+</html>
