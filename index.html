@@ -9,6 +9,40 @@
     <title>MONTE PROJECT</title>
     <link rel="icon" type="image/png" href="icon/faviconmars.png">
     <link rel="stylesheet" href="css/style.css?v=1.2">
+    <style>
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fff;
+        }
+
+        /* Responsywność dla menu mobilnego */
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin: 20px 0 0 0;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,12 +53,17 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="misja.html">MISJA</a>
-            <a href="technologia.html">TECHNOLOGIA</a>
-            <a href="kolonizacja.html">KOLONIZACJA</a>
-            <a href="zasoby.html">ZASOBY</a>
-            <a href="zagrozenia.html">ZAGROŻENIA</a>
-            <a href="os-czasu.html">OŚ CZASU</a>
+            <a href="misja.html" data-i18n="nav_misja">MISJA</a>
+            <a href="technologia.html" data-i18n="nav_technologia">TECHNOLOGIA</a>
+            <a href="kolonizacja.html" data-i18n="nav_kolonizacja">KOLONIZACJA</a>
+            <a href="zasoby.html" data-i18n="nav_zasoby">ZASOBY</a>
+            <a href="zagrozenia.html" data-i18n="nav_zagrozenia">ZAGROŻENIA</a>
+            <a href="os-czasu.html" data-i18n="nav_os_czasu">OŚ CZASU</a>
+
+            <div class="lang-switcher">
+                <a href="#" class="lang-btn active" data-lang="pl">PL</a>
+                <a href="#" class="lang-btn" data-lang="en">EN</a>
+            </div>
         </nav>
         <div class="menu-toggle">
             &#9776;
@@ -41,16 +80,17 @@
             <div class="video-overlay"></div>
 
             <div class="hero-content">
-                <h1 class="hero-title">PROJEKT MONTE</h1>
-                <p class="hero-description"><b>M</b>ars <b>O</b>rbital <b>N</b>etwork <b>T</b>erraform
+                <h1 class="hero-title" data-i18n="hero_title">PROJEKT MONTE</h1>
+                <p class="hero-description" data-i18n="hero_desc"><b>M</b>ars <b>O</b>rbital <b>N</b>etwork
+                    <b>T</b>erraform
                     <b>E</b>xploration jest fundamentem naszej misji budowy samowystarczalnej cywilizacji na Czerwonej
                     Planecie.
                 </p>
-                <a href="#intro" class="btn">ROZPOCZNIJ &rarr;</a>
+                <a href="#intro" class="btn" data-i18n="hero_btn">ROZPOCZNIJ &rarr;</a>
             </div>
 
             <div class="scroll-down">
-                <span>PRZEWIŃ</span>
+                <span data-i18n="scroll_down">PRZEWIŃ</span>
                 <div class="chevron"></div>
             </div>
         </section>
@@ -58,12 +98,14 @@
         <!-- Poniżej dodane sekcje informacyjne wprowadzające w temat -->
         <section id="intro" class="intro-section">
             <div class="intro-container">
-                <h2 class="section-heading">CZYNIĄC ŻYCIE WIELOPLANETARNYM</h2>
-                <p class="section-text">Projekt MONTE (Mars Orbital Network Terraform Exploration) to nasza odpowiedź
+                <h2 class="section-heading" data-i18n="intro_heading">CZYNIĄC ŻYCIE WIELOPLANETARNYM</h2>
+                <p class="section-text" data-i18n="intro_p1">Projekt MONTE (Mars Orbital Network Terraform Exploration)
+                    to nasza odpowiedź
                     na rosnące wyzwanie zagwarantowania bezpieczeństwa dla przyszłości naszej cywilizacji.
                     Uważamy, że aby przetrwać i rozwijać się jako gatunek, musimy zaadaptować Czerwoną Planetę do
                     fizycznego i biologicznego podtrzymywania ziemskiego życia w długiej perspektywie.</p>
-                <p class="section-text highlight-text">Terraformacja nie jest już pustą fantastyką. Dzięki potędze
+                <p class="section-text highlight-text" data-i18n="intro_p2">Terraformacja nie jest już pustą fantastyką.
+                    Dzięki potędze
                     dzisiejszej technologii, to niezbędny krok w ewolucji ludzkości.</p>
             </div>
         </section>
@@ -75,8 +117,8 @@
                         <img src="img/mars.jpg" alt="Widok Planety Mars z Kosmosu">
                     </div>
                     <div class="why-mars-text">
-                        <h2 class="section-heading text-left">DLACZEGO MARS?</h2>
-                        <p class="section-text" style="text-align: left;">
+                        <h2 class="section-heading text-left" data-i18n="why_mars_heading">DLACZEGO MARS?</h2>
+                        <p class="section-text" style="text-align: left;" data-i18n="why_mars_p">
                             Znajdujący się w średniej odległości 225 milionów kilometrów, Mars to jeden z najbliższych
                             nadających się do zamieszkania sąsiadów Ziemi. Jest o połowę dalej od Słońca niż Ziemia,
                             dzięki czemu wciąż dociera do niego wystarczająca ilość potężnego światła. Jest tam nieco
@@ -90,24 +132,24 @@
 
                         <div class="mars-stats-table">
                             <div class="stat-row">
-                                <span class="stat-label">ŚREDNICA</span>
+                                <span class="stat-label" data-i18n="stat_diameter">ŚREDNICA</span>
                                 <span class="stat-value">6 791 km / 4 220 mi</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">DŁUGOŚĆ DNIA</span>
-                                <span class="stat-value">24 godz 37 min</span>
+                                <span class="stat-label" data-i18n="stat_day">DŁUGOŚĆ DNIA</span>
+                                <span class="stat-value" data-i18n="stat_day_val">24 godz 37 min</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">SIŁA CIĘŻKOŚCI</span>
-                                <span class="stat-value">38% ziemskiej</span>
+                                <span class="stat-label" data-i18n="stat_gravity">SIŁA CIĘŻKOŚCI</span>
+                                <span class="stat-value" data-i18n="stat_gravity_val">38% ziemskiej</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">ŚR. ODLEGŁOŚĆ OD ZIEMI</span>
+                                <span class="stat-label" data-i18n="stat_distance">ŚR. ODLEGŁOŚĆ OD ZIEMI</span>
                                 <span class="stat-value">225 mln km / 140 mln mi</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">WIEK</span>
-                                <span class="stat-value">4.5 miliarda lat</span>
+                                <span class="stat-label" data-i18n="stat_age">WIEK</span>
+                                <span class="stat-value" data-i18n="stat_age_val">4.5 miliarda lat</span>
                             </div>
                         </div>
                     </div>
@@ -116,43 +158,49 @@
         </section>
 
         <section id="pillars" class="pillars-section">
-            <h2 class="section-heading text-center">FILARY PROJEKTU MONTE</h2>
+            <h2 class="section-heading text-center" data-i18n="pillars_heading">FILARY PROJEKTU MONTE</h2>
             <div class="info-grid">
                 <div class="info-card">
-                    <h3>01. MISJA</h3>
-                    <p>Założenia naszego kosmicznego programu eksploracyjnego, mające na celu zabezpieczenie archiwów i
+                    <h3 data-i18n="pillar_1_title">01. MISJA</h3>
+                    <p data-i18n="pillar_1_desc">Założenia naszego kosmicznego programu eksploracyjnego, mające na celu
+                        zabezpieczenie archiwów i
                         przyszłości ludzi z dala od ziemskich zagrożeń.</p>
-                    <a href="misja.html" class="card-link">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
+                    <a href="misja.html" class="card-link" data-i18n="learn_more">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
                 </div>
                 <div class="info-card">
-                    <h3>02. TECHNOLOGIA</h3>
-                    <p>Superciężkie rakiety nośne najnowszej generacji, innowacyjne silniki fuzyjne oraz zamknięte
+                    <h3 data-i18n="pillar_2_title">02. TECHNOLOGIA</h3>
+                    <p data-i18n="pillar_2_desc">Superciężkie rakiety nośne najnowszej generacji, innowacyjne silniki
+                        fuzyjne oraz zamknięte
                         systemy podtrzymywania życia podczas rocznego tranzytu.</p>
-                    <a href="technologia.html" class="card-link">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
+                    <a href="technologia.html" class="card-link" data-i18n="learn_more">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
                 </div>
                 <div class="info-card">
-                    <h3>03. KOLONIZACJA</h3>
-                    <p>Kolejne fizyczne etapy tworzenia samowystarczalnych miast na powierzchni, zaczynając od
+                    <h3 data-i18n="pillar_3_title">03. KOLONIZACJA</h3>
+                    <p data-i18n="pillar_3_desc">Kolejne fizyczne etapy tworzenia samowystarczalnych miast na
+                        powierzchni, zaczynając od
                         wydrążonych podpowierzchniowych habitatów pierwszych generacji.</p>
-                    <a href="kolonizacja.html" class="card-link">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
+                    <a href="kolonizacja.html" class="card-link" data-i18n="learn_more">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
                 </div>
                 <div class="info-card">
-                    <h3>04. ZASOBY</h3>
-                    <p>Plan rozległej infrastruktury wydobywczej budującej niezależność kolonii
+                    <h3 data-i18n="pillar_4_title">04. ZASOBY</h3>
+                    <p data-i18n="pillar_4_desc">Plan rozległej infrastruktury wydobywczej budującej niezależność
+                        kolonii
                         poprzez wydobycie podziemnego lodu wodnego i produkcję własnego tlenu do oddychania.</p>
-                    <a href="zasoby.html" class="card-link">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
+                    <a href="zasoby.html" class="card-link" data-i18n="learn_more">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
                 </div>
                 <div class="info-card">
-                    <h3>05. ZAGROŻENIA</h3>
-                    <p>Kompleksowa analiza wyzwań czyhających na czerwonej planecie, od zabójczego promieniowania GCR po
+                    <h3 data-i18n="pillar_5_title">05. ZAGROŻENIA</h3>
+                    <p data-i18n="pillar_5_desc">Kompleksowa analiza wyzwań czyhających na czerwonej planecie, od
+                        zabójczego promieniowania GCR po
                         ekstremalne burze pyłowe i izolację psychofizyczną.</p>
-                    <a href="zagrozenia.html" class="card-link">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
+                    <a href="zagrozenia.html" class="card-link" data-i18n="learn_more">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
                 </div>
                 <div class="info-card">
-                    <h3>06. OŚ CZASU</h3>
-                    <p>Interaktywny harmonogram ekspansji — od pierwszych testów Starship po budowę samowystarczalnego
+                    <h3 data-i18n="pillar_6_title">06. OŚ CZASU</h3>
+                    <p data-i18n="pillar_6_desc">Interaktywny harmonogram ekspansji — od pierwszych testów Starship po
+                        budowę samowystarczalnego
                         miasta. Poznaj fakty i daty graniczne naszej misji.</p>
-                    <a href="os-czasu.html" class="card-link">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
+                    <a href="os-czasu.html" class="card-link" data-i18n="learn_more">DOWIEDZ SIĘ WIĘCEJ &rarr;</a>
                 </div>
             </div>
         </section>
@@ -168,27 +216,28 @@
                 <!-- Lewa nawigacja -->
                 <nav class="kardashev-nav">
                     <div class="nav-header">
-                        <span class="nav-label">POZIOM ROZWOJU</span>
+                        <span class="nav-label" data-i18n="kardashev_level">POZIOM ROZWOJU</span>
                     </div>
                     <ul class="kardashev-list-vertical">
                         <li class="kardashev-btn active" data-type="type1">
                             <span class="btn-num">01</span>
-                            <span class="btn-text">TYP I - PLANETARNY</span>
+                            <span class="btn-text" data-i18n="kardashev_type1">TYP I - PLANETARNY</span>
                         </li>
                         <li class="kardashev-btn" data-type="type2">
                             <span class="btn-num">02</span>
-                            <span class="btn-text">TYP II - GWIEZDNY</span>
+                            <span class="btn-text" data-i18n="kardashev_type2">TYP II - GWIEZDNY</span>
                         </li>
                         <li class="kardashev-btn" data-type="type3">
                             <span class="btn-num">03</span>
-                            <span class="btn-text">TYP III - GALAKTYCZNY</span>
+                            <span class="btn-text" data-i18n="kardashev_type3">TYP III - GALAKTYCZNY</span>
                         </li>
                     </ul>
                 </nav>
 
                 <!-- Główna treść -->
                 <div class="kardashev-main">
-                    <h2 class="kardashev-title">DĄŻYMY DO BYCIA CYWILIZACJĄ GALAKTYCZNĄ</h2>
+                    <h2 class="kardashev-title" data-i18n="kardashev_main_title">DĄŻYMY DO BYCIA CYWILIZACJĄ GALAKTYCZNĄ
+                    </h2>
                     <div class="active-description-large">
                         <p id="desc-text-main"><span>Wykorzystanie pełnego potencjału</span> energetycznego planety</p>
                     </div>
@@ -201,12 +250,6 @@
                 const btns = document.querySelectorAll('.kardashev-btn');
                 const backgrounds = document.querySelectorAll('.kardashev-bg');
                 const mainDesc = document.getElementById('desc-text-main');
-
-                const descriptions = {
-                    'type1': '<span>Wykorzystanie pełnego potencjału</span> energetycznego planety',
-                    'type2': '<span>Wykorzystanie całkowitej mocy</span> macierzystej gwiazdy',
-                    'type3': '<span>Wykorzystanie całkowitej mocy</span> całej galaktyki'
-                };
 
                 btns.forEach(btn => {
                     btn.addEventListener('click', () => {
@@ -227,7 +270,7 @@
                         mainDesc.style.transform = 'translateY(30px) scale(0.95)';
 
                         setTimeout(() => {
-                            mainDesc.innerHTML = descriptions[type];
+                            // Text update is now handled by i18n.js
                             mainDesc.style.opacity = '1';
                             mainDesc.style.filter = 'blur(0px)';
                             mainDesc.style.transform = 'translateY(0) scale(1)';
@@ -242,21 +285,25 @@
         <div class="footer-content">
             <div class="footer-logo">MONTE Projekt</div>
             <div class="footer-links">
-                <a href="misja.html">Misja</a>
-                <a href="technologia.html">Technologia</a>
-                <a href="kolonizacja.html">Kolonizacja</a>
-                <a href="zasoby.html">Zasoby</a>
-                <a href="zagrozenia.html">Zagrożenia</a>
-                <a href="os-czasu.html">Oś Czasu</a>
+                <a href="misja.html" data-i18n="nav_misja">Misja</a>
+                <a href="technologia.html" data-i18n="nav_technologia">Technologia</a>
+                <a href="kolonizacja.html" data-i18n="nav_kolonizacja">Kolonizacja</a>
+                <a href="zasoby.html" data-i18n="nav_zasoby">Zasoby</a>
+                <a href="zagrozenia.html" data-i18n="nav_zagrozenia">Zagrożenia</a>
+                <a href="os-czasu.html" data-i18n="nav_os_czasu">Oś Czasu</a>
             </div>
             <div class="footer-copyright">
-                <span>&copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym.</span>
-                <a href="https://github.com/CryptGodSon" target="_blank" rel="noopener noreferrer" class="engineered-btn">ENGINEERED BY CRYPTGODSON</a>
+                <span data-i18n="footer_copyright">&copy; 2026 MONTE. Czyniąc ludzkość gatunkiem
+                    wieloplanetarnym.</span>
+                <a href="https://github.com/CryptGodSon" target="_blank" rel="noopener noreferrer"
+                    class="engineered-btn">ENGINEERED BY CRYPTGODSON</a>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 
 </html>

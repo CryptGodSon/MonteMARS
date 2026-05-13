@@ -10,6 +10,41 @@
     <link rel="icon" type="image/png" href="icon/faviconmars.png">
     <link rel="stylesheet" href="css/style.css?v=1.1">
 
+
+    <style>
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fff;
+        }
+
+        /* Responsywność dla menu mobilnego */
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin: 20px 0 0 0;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -20,12 +55,17 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="misja.html">MISJA</a>
-            <a href="technologia.html">TECHNOLOGIA</a>
-            <a href="kolonizacja.html">KOLONIZACJA</a>
-            <a href="zasoby.html">ZASOBY</a>
-            <a href="zagrozenia.html" class="active">ZAGROŻENIA</a>
-            <a href="os-czasu.html">OŚ CZASU</a>
+            <a href="misja.html" data-i18n="nav_misja">MISJA</a>
+            <a href="technologia.html" data-i18n="nav_technologia">TECHNOLOGIA</a>
+            <a href="kolonizacja.html" data-i18n="nav_kolonizacja">KOLONIZACJA</a>
+            <a href="zasoby.html" data-i18n="nav_zasoby">ZASOBY</a>
+            <a href="zagrozenia.html" class="active" data-i18n="nav_zagrozenia">ZAGROŻENIA</a>
+            <a href="os-czasu.html" data-i18n="nav_os_czasu">OŚ CZASU</a>
+        
+            <div class="lang-switcher">
+                <a href="#" class="lang-btn active" data-lang="pl">PL</a>
+                <a href="#" class="lang-btn" data-lang="en">EN</a>
+            </div>
         </nav>
         <div class="menu-toggle">
             &#9776;
@@ -450,21 +490,25 @@
         <div class="footer-content">
             <div class="footer-logo">MONTE Projekt</div>
             <div class="footer-links">
-                <a href="misja.html">Misja</a>
-                <a href="technologia.html">Technologia</a>
-                <a href="kolonizacja.html">Kolonizacja</a>
-                <a href="zasoby.html">Zasoby</a>
-                <a href="zagrozenia.html">Zagrożenia</a>
-                <a href="os-czasu.html">Oś Czasu</a>
+                <a href="misja.html" data-i18n="nav_misja">Misja</a>
+                <a href="technologia.html" data-i18n="nav_technologia">Technologia</a>
+                <a href="kolonizacja.html" data-i18n="nav_kolonizacja">Kolonizacja</a>
+                <a href="zasoby.html" data-i18n="nav_zasoby">Zasoby</a>
+                <a href="zagrozenia.html" data-i18n="nav_zagrozenia">Zagrożenia</a>
+                <a href="os-czasu.html" data-i18n="nav_os_czasu">Oś Czasu</a>
             </div>
             <div class="footer-copyright">
-                <span>&copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym.</span>
+                <span data-i18n="footer_copyright">&copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym.</span>
                 <a href="https://github.com/CryptGodSon" target="_blank" rel="noopener noreferrer" class="engineered-btn">ENGINEERED BY CRYPTGODSON</a>
             </div>
         </div>
     </footer>
 
+    
     <script src="js/script.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const filterBtns = document.querySelectorAll('.filter-btn');

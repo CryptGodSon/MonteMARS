@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             navbar.classList.toggle('active');
-            
+
             if (navLinks.classList.contains('active')) {
                 menuToggle.innerHTML = '&times;';
             } else {
                 menuToggle.innerHTML = '&#9776;';
             }
         });
-        
+
         const links = navLinks.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // LOGIKA SCROLLOWANIA (Scroll Down/Up)
         // ============================================
         let lastScroll = 0;
-        
+
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
-            
+
             // 1. Tło paska (gdy przescrollujemy kawałek)
             if (currentScroll > 50) {
                 navbar.classList.add('nav-scrolled');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Scroll w górę — pokaż
                 navbar.classList.remove('nav-hidden');
             }
-            
+
             lastScroll = currentScroll;
         });
     }
