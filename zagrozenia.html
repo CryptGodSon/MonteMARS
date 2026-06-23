@@ -61,7 +61,7 @@
             <a href="zasoby.html" data-i18n="nav_zasoby">ZASOBY</a>
             <a href="zagrozenia.html" class="active" data-i18n="nav_zagrozenia">ZAGROŻENIA</a>
             <a href="os-czasu.html" data-i18n="nav_os_czasu">OŚ CZASU</a>
-        
+
             <div class="lang-switcher">
                 <a href="#" class="lang-btn active" data-lang="pl">PL</a>
                 <a href="#" class="lang-btn" data-lang="en">EN</a>
@@ -79,13 +79,13 @@
             </video>
             <div class="video-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title">ZAGROŻENIA MISJI</h1>
-                <p class="hero-description">Kolonizacja Marsa to nie tylko wizja — to walka z realnymi, poważnymi
+                <h1 class="hero-title" data-i18n="zag_hero_title">ZAGROŻENIA MISJI</h1>
+                <p class="hero-description" data-i18n="zag_hero_desc">Kolonizacja Marsa to nie tylko wizja — to walka z realnymi, poważnymi
                     niebezpieczeństwami. Poniżej znajdziesz pełną analizę zagrożeń czekających na <b>PIERWSZYCH
                     KOLONISTÓW</b> i metody, jakimi przyszła cywilizacja marsjańska może je zwalczyć.</p>
             </div>
             <div class="scroll-down">
-                <span>PRZEWIŃ</span>
+                <span data-i18n="scroll_down">PRZEWIŃ</span>
                 <div class="chevron"></div>
             </div>
         </section>
@@ -93,42 +93,42 @@
         <section class="content-section">
             <div class="content-container">
 
-                <h2 class="section-heading text-center">ANALIZA ZAGROŻEŃ</h2>
+                <h2 class="section-heading text-center" data-i18n="zag_heading">ANALIZA ZAGROŻEŃ</h2>
 
                 <!-- Legenda -->
                 <div class="severity-legend">
                     <div class="legend-item">
                         <div class="legend-dot krytyczne"></div>
-                        <span>KRYTYCZNE</span>
+                        <span data-i18n="zag_sev_kryt">KRYTYCZNE</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-dot wysokie"></div>
-                        <span>WYSOKIE</span>
+                        <span data-i18n="zag_sev_wys">WYSOKIE</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-dot umiarkowane"></div>
-                        <span>UMIARKOWANE</span>
+                        <span data-i18n="zag_sev_umiar">UMIARKOWANE</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-dot latwe"></div>
-                        <span>ŁATWE</span>
+                        <span data-i18n="zag_sev_latwe">ŁATWE</span>
                     </div>
                 </div>
 
                 <!-- Filtry -->
                 <div class="threat-filters">
-                    <button class="filter-btn active" data-filter="all">WSZYSTKIE</button>
-                    <button class="filter-btn" data-filter="severity-krytyczne">KRYTYCZNE</button>
-                    <button class="filter-btn" data-filter="severity-wysokie">WYSOKIE</button>
-                    <button class="filter-btn" data-filter="severity-umiarkowane">UMIARKOWANE</button>
-                    <button class="filter-btn" data-filter="severity-latwe">ŁATWE</button>
-                    <button class="filter-btn" data-filter="cat-biologiczne">BIOLOGICZNE</button>
-                    <button class="filter-btn" data-filter="cat-techniczne">TECHNICZNE</button>
-                    <button class="filter-btn" data-filter="cat-srodowiskowe">ŚRODOWISKOWE</button>
-                    <button class="filter-btn" data-filter="cat-psychologiczne">PSYCHOLOGICZNE</button>
-                    <button class="filter-btn" data-filter="cat-chemiczne">CHEMICZNE</button>
-                    <button class="filter-btn" data-filter="cat-logistyczne">LOGISTYCZNE</button>
-                    <button class="filter-btn" data-filter="cat-spoleczne">SPOŁECZNE</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="zag_filter_all">WSZYSTKIE</button>
+                    <button class="filter-btn" data-filter="severity-krytyczne" data-i18n="zag_sev_kryt">KRYTYCZNE</button>
+                    <button class="filter-btn" data-filter="severity-wysokie" data-i18n="zag_sev_wys">WYSOKIE</button>
+                    <button class="filter-btn" data-filter="severity-umiarkowane" data-i18n="zag_sev_umiar">UMIARKOWANE</button>
+                    <button class="filter-btn" data-filter="severity-latwe" data-i18n="zag_sev_latwe">ŁATWE</button>
+                    <button class="filter-btn" data-filter="cat-biologiczne" data-i18n="zag_catf_bio">BIOLOGICZNE</button>
+                    <button class="filter-btn" data-filter="cat-techniczne" data-i18n="zag_catf_tech">TECHNICZNE</button>
+                    <button class="filter-btn" data-filter="cat-srodowiskowe" data-i18n="zag_catf_srod">ŚRODOWISKOWE</button>
+                    <button class="filter-btn" data-filter="cat-psychologiczne" data-i18n="zag_catf_psych">PSYCHOLOGICZNE</button>
+                    <button class="filter-btn" data-filter="cat-chemiczne" data-i18n="zag_catf_chem">CHEMICZNE</button>
+                    <button class="filter-btn" data-filter="cat-logistyczne" data-i18n="zag_catf_log">LOGISTYCZNE</button>
+                    <button class="filter-btn" data-filter="cat-spoleczne" data-i18n="zag_catf_spol">SPOŁECZNE</button>
                 </div>
 
                 <div class="results-count" id="results-count">WYŚWIETLONO: 18 / 18</div>
@@ -139,345 +139,345 @@
                     <!-- 1 -->
                     <div class="threat-card" data-severity="krytyczne" data-category="biologiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Promieniowanie kosmiczne</span>
+                            <span class="threat-name" data-i18n="zag_c1_name">Promieniowanie kosmiczne</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Biologiczne</span>
-                                <span class="badge-severity krytyczne">Krytyczne</span>
+                                <span class="badge-category" data-i18n="zag_cat_bio">Biologiczne</span>
+                                <span class="badge-severity krytyczne" data-i18n="zag_sevb_kryt">Krytyczne</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Budowa baz pod powierzchnią Marsa lub w jaskiniach lawowych (naturalna osłona skalna)</li>
-                            <li>Osłony z polietylenu nasyconego wodorem wokół modułów sypialnych</li>
-                            <li>Opracowanie leków radioprotektywnych (np. na bazie amifostyny lub nowych związków)</li>
-                            <li>Terraformowanie — stworzenie gęstej atmosfery i pola magnetycznego (perspektywa 500+ lat)</li>
-                            <li>Edycja genów (CRISPR) zwiększająca odporność komórek na promieniowanie</li>
+                            <li data-i18n="zag_c1_s1">Budowa baz pod powierzchnią Marsa lub w jaskiniach lawowych (naturalna osłona skalna)</li>
+                            <li data-i18n="zag_c1_s2">Osłony z polietylenu nasyconego wodorem wokół modułów sypialnych</li>
+                            <li data-i18n="zag_c1_s3">Opracowanie leków radioprotektywnych (np. na bazie amifostyny lub nowych związków)</li>
+                            <li data-i18n="zag_c1_s4">Terraformowanie — stworzenie gęstej atmosfery i pola magnetycznego (perspektywa 500+ lat)</li>
+                            <li data-i18n="zag_c1_s5">Edycja genów (CRISPR) zwiększająca odporność komórek na promieniowanie</li>
                         </ul>
                     </div>
 
                     <!-- 2 -->
                     <div class="threat-card" data-severity="krytyczne" data-category="techniczne">
                         <div class="threat-header">
-                            <span class="threat-name">Dekompresja / uszkodzenie skafandra</span>
+                            <span class="threat-name" data-i18n="zag_c2_name">Dekompresja / uszkodzenie skafandra</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Techniczne</span>
-                                <span class="badge-severity krytyczne">Krytyczne</span>
+                                <span class="badge-category" data-i18n="zag_cat_tech">Techniczne</span>
+                                <span class="badge-severity krytyczne" data-i18n="zag_sevb_kryt">Krytyczne</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Skafandry z samonaprawiającymi się materiałami (polimery z mikrokapsułkami uszczelniacza)</li>
-                            <li>Inteligentne systemy monitorowania integralności skafandra w czasie rzeczywistym</li>
-                            <li>Bazy z wielokrotną strefą ciśnienia i szybkimi śluzami ratunkowymi</li>
-                            <li>Miękkie egzoszkielety ciśnieniowe — alternatywa dla tradycyjnych skafandrów</li>
+                            <li data-i18n="zag_c2_s1">Skafandry z samonaprawiającymi się materiałami (polimery z mikrokapsułkami uszczelniacza)</li>
+                            <li data-i18n="zag_c2_s2">Inteligentne systemy monitorowania integralności skafandra w czasie rzeczywistym</li>
+                            <li data-i18n="zag_c2_s3">Bazy z wielokrotną strefą ciśnienia i szybkimi śluzami ratunkowymi</li>
+                            <li data-i18n="zag_c2_s4">Miękkie egzoszkielety ciśnieniowe — alternatywa dla tradycyjnych skafandrów</li>
                         </ul>
                     </div>
 
                     <!-- 3 -->
                     <div class="threat-card" data-severity="krytyczne" data-category="srodowiskowe">
                         <div class="threat-header">
-                            <span class="threat-name">Globalne burze pyłowe</span>
+                            <span class="threat-name" data-i18n="zag_c3_name">Globalne burze pyłowe</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Środowiskowe</span>
-                                <span class="badge-severity krytyczne">Krytyczne</span>
+                                <span class="badge-category" data-i18n="zag_cat_srod">Środowiskowe</span>
+                                <span class="badge-severity krytyczne" data-i18n="zag_sevb_kryt">Krytyczne</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Reaktory nuklearne jako główne źródło energii — niezależne od słońca (np. reaktory Kilopower NASA)</li>
-                            <li>Sieć satelitów meteorologicznych do wczesnego ostrzegania z kilkutygodniowym wyprzedzeniem</li>
-                            <li>Zapasy żywności, wody i tlenu na minimum 2 lata w każdej bazie</li>
-                            <li>Elektrostatyczne systemy odpylania paneli solarnych (badane przez NASA)</li>
+                            <li data-i18n="zag_c3_s1">Reaktory nuklearne jako główne źródło energii — niezależne od słońca (np. reaktory Kilopower NASA)</li>
+                            <li data-i18n="zag_c3_s2">Sieć satelitów meteorologicznych do wczesnego ostrzegania z kilkutygodniowym wyprzedzeniem</li>
+                            <li data-i18n="zag_c3_s3">Zapasy żywności, wody i tlenu na minimum 2 lata w każdej bazie</li>
+                            <li data-i18n="zag_c3_s4">Elektrostatyczne systemy odpylania paneli solarnych (badane przez NASA)</li>
                         </ul>
                     </div>
 
                     <!-- 4 -->
                     <div class="threat-card" data-severity="krytyczne" data-category="techniczne">
                         <div class="threat-header">
-                            <span class="threat-name">Brak tlenu</span>
+                            <span class="threat-name" data-i18n="zag_c4_name">Brak tlenu</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Techniczne</span>
-                                <span class="badge-severity krytyczne">Krytyczne</span>
+                                <span class="badge-category" data-i18n="zag_cat_tech">Techniczne</span>
+                                <span class="badge-severity krytyczne" data-i18n="zag_sevb_kryt">Krytyczne</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>MOXIE (już testowane na Perseverance) — elektroliza CO₂ w tlen; skalowanie do rozmiarów przemysłowych</li>
-                            <li>Redundantne systemy produkcji tlenu z wieloma niezależnymi modułami zapasowymi</li>
-                            <li>Uprawa glonów i roślin wewnątrz bazy jako biologiczne uzupełnienie produkcji tlenu</li>
-                            <li>Zbiorniki z ciekłym tlenem jako rezerwa awaryjna</li>
+                            <li data-i18n="zag_c4_s1">MOXIE (już testowane na Perseverance) — elektroliza CO₂ w tlen; skalowanie do rozmiarów przemysłowych</li>
+                            <li data-i18n="zag_c4_s2">Redundantne systemy produkcji tlenu z wieloma niezależnymi modułami zapasowymi</li>
+                            <li data-i18n="zag_c4_s3">Uprawa glonów i roślin wewnątrz bazy jako biologiczne uzupełnienie produkcji tlenu</li>
+                            <li data-i18n="zag_c4_s4">Zbiorniki z ciekłym tlenem jako rezerwa awaryjna</li>
                         </ul>
                     </div>
 
                     <!-- 5 -->
                     <div class="threat-card" data-severity="krytyczne" data-category="srodowiskowe">
                         <div class="threat-header">
-                            <span class="threat-name">Ekstremalny mróz</span>
+                            <span class="threat-name" data-i18n="zag_c5_name">Ekstremalny mróz</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Środowiskowe</span>
-                                <span class="badge-severity krytyczne">Krytyczne</span>
+                                <span class="badge-category" data-i18n="zag_cat_srod">Środowiskowe</span>
+                                <span class="badge-severity krytyczne" data-i18n="zag_sevb_kryt">Krytyczne</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Budowa baz pod ziemią — temperatura tam jest znacznie stabilniejsza (ok. –20°C)</li>
-                            <li>Izolacja termiczna oparta na aerożelach (najlepsze znane izolatury cieplne)</li>
-                            <li>Ciepło odpadowe z reaktorów nuklearnych do ogrzewania całej bazy</li>
-                            <li>Terraformowanie — zwiększenie gęstości atmosfery przez uwalnianie gazów cieplarnianych</li>
+                            <li data-i18n="zag_c5_s1">Budowa baz pod ziemią — temperatura tam jest znacznie stabilniejsza (ok. –20°C)</li>
+                            <li data-i18n="zag_c5_s2">Izolacja termiczna oparta na aerożelach (najlepsze znane izolatory cieplne)</li>
+                            <li data-i18n="zag_c5_s3">Ciepło odpadowe z reaktorów nuklearnych do ogrzewania całej bazy</li>
+                            <li data-i18n="zag_c5_s4">Terraformowanie — zwiększenie gęstości atmosfery przez uwalnianie gazów cieplarnianych</li>
                         </ul>
                     </div>
 
                     <!-- 6 -->
                     <div class="threat-card" data-severity="wysokie" data-category="psychologiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Izolacja i problemy psychiczne</span>
+                            <span class="threat-name" data-i18n="zag_c6_name">Izolacja i problemy psychiczne</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Psychologiczne</span>
-                                <span class="badge-severity wysokie">Wysokie</span>
+                                <span class="badge-category" data-i18n="zag_cat_psych">Psychologiczne</span>
+                                <span class="badge-severity wysokie" data-i18n="zag_sevb_wys">Wysokie</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Staranny dobór psychologiczny załogi i intensywny trening grupowy przed misją</li>
-                            <li>Stała opieka psychologiczna zdalnie z Ziemi + AI-terapeuta na miejscu</li>
-                            <li>Projektowanie baz z przestrzeniami zielonymi, rekreacyjnymi i prywatnymi kwaterami</li>
-                            <li>Wirtualna rzeczywistość (VR) odtwarzająca środowisko ziemskie dla złagodzenia tęsknoty</li>
-                            <li>Budowanie dużej kolonii — społeczność zmniejsza poczucie izolacji</li>
+                            <li data-i18n="zag_c6_s1">Staranny dobór psychologiczny załogi i intensywny trening grupowy przed misją</li>
+                            <li data-i18n="zag_c6_s2">Stała opieka psychologiczna zdalnie z Ziemi + AI-terapeuta na miejscu</li>
+                            <li data-i18n="zag_c6_s3">Projektowanie baz z przestrzeniami zielonymi, rekreacyjnymi i prywatnymi kwaterami</li>
+                            <li data-i18n="zag_c6_s4">Wirtualna rzeczywistość (VR) odtwarzająca środowisko ziemskie dla złagodzenia tęsknoty</li>
+                            <li data-i18n="zag_c6_s5">Budowanie dużej kolonii — społeczność zmniejsza poczucie izolacji</li>
                         </ul>
                     </div>
 
                     <!-- 7 -->
                     <div class="threat-card" data-severity="wysokie" data-category="biologiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Zanik mięśni i kości</span>
+                            <span class="threat-name" data-i18n="zag_c7_name">Zanik mięśni i kości</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Biologiczne</span>
-                                <span class="badge-severity wysokie">Wysokie</span>
+                                <span class="badge-category" data-i18n="zag_cat_bio">Biologiczne</span>
+                                <span class="badge-severity wysokie" data-i18n="zag_sevb_wys">Wysokie</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Codzienne intensywne ćwiczenia z obciążeniem — obowiązkowe protokoły treningowe</li>
-                            <li>Farmakologia: bisfosfoniany, hormony wzrostu, leki antyresorpcyjne</li>
-                            <li>Odśrodkowe moduły sypialne z symulowaną grawitacją ziemską (1g podczas snu)</li>
-                            <li>Inżynieria genetyczna — selekcja lub modyfikacja kolonistów odpornych na atrofię</li>
+                            <li data-i18n="zag_c7_s1">Codzienne intensywne ćwiczenia z obciążeniem — obowiązkowe protokoły treningowe</li>
+                            <li data-i18n="zag_c7_s2">Farmakologia: bisfosfoniany, hormony wzrostu, leki antyresorpcyjne</li>
+                            <li data-i18n="zag_c7_s3">Odśrodkowe moduły sypialne z symulowaną grawitacją ziemską (1g podczas snu)</li>
+                            <li data-i18n="zag_c7_s4">Inżynieria genetyczna — selekcja lub modyfikacja kolonistów odpornych na atrofię</li>
                         </ul>
                     </div>
 
                     <!-- 8 -->
                     <div class="threat-card" data-severity="wysokie" data-category="chemiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Skażenie perkloranami</span>
+                            <span class="threat-name" data-i18n="zag_c8_name">Skażenie perchloranami</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Chemiczne</span>
-                                <span class="badge-severity wysokie">Wysokie</span>
+                                <span class="badge-category" data-i18n="zag_cat_chem">Chemiczne</span>
+                                <span class="badge-severity wysokie" data-i18n="zag_sevb_wys">Wysokie</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Szczelne systemy śluz z wielostopniowym odpylaniem przed wejściem do bazy</li>
-                            <li>Filtry HEPA i elektrostatyczne wewnątrz pomieszczeń</li>
-                            <li>Bioremediacja gleby za pomocą bakterii rozkładających perchlorany (np. Dechloromonas)</li>
-                            <li>Uprawa w sterylnych hydroponicznych systemach zamkniętych, bez kontaktu z glebą marsjańską</li>
+                            <li data-i18n="zag_c8_s1">Szczelne systemy śluz z wielostopniowym odpylaniem przed wejściem do bazy</li>
+                            <li data-i18n="zag_c8_s2">Filtry HEPA i elektrostatyczne wewnątrz pomieszczeń</li>
+                            <li data-i18n="zag_c8_s3">Bioremediacja gleby za pomocą bakterii rozkładających perchlorany (np. Dechloromonas)</li>
+                            <li data-i18n="zag_c8_s4">Uprawa w sterylnych hydroponicznych systemach zamkniętych, bez kontaktu z glebą marsjańską</li>
                         </ul>
                     </div>
 
                     <!-- 9 -->
                     <div class="threat-card" data-severity="wysokie" data-category="techniczne">
                         <div class="threat-header">
-                            <span class="threat-name">Awaria zasilania</span>
+                            <span class="threat-name" data-i18n="zag_c9_name">Awaria zasilania</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Techniczne</span>
-                                <span class="badge-severity wysokie">Wysokie</span>
+                                <span class="badge-category" data-i18n="zag_cat_tech">Techniczne</span>
+                                <span class="badge-severity wysokie" data-i18n="zag_sevb_wys">Wysokie</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Małe reaktory nuklearne jako główne, niezawodne źródło energii (Kilopower, eVinci)</li>
-                            <li>Kombinacja: solare + nuklearne + geotermalne (wykorzystanie ciepła wnętrza Marsa)</li>
-                            <li>Zdecentralizowana sieć energetyczna — awaria jednego węzła nie pozbawia energii całej bazy</li>
-                            <li>Duże zapasy baterii i superkondensatorów jako bufor awaryjny</li>
+                            <li data-i18n="zag_c9_s1">Małe reaktory nuklearne jako główne, niezawodne źródło energii (Kilopower, eVinci)</li>
+                            <li data-i18n="zag_c9_s2">Kombinacja: solarne + nuklearne + geotermalne (wykorzystanie ciepła wnętrza Marsa)</li>
+                            <li data-i18n="zag_c9_s3">Zdecentralizowana sieć energetyczna — awaria jednego węzła nie pozbawia energii całej bazy</li>
+                            <li data-i18n="zag_c9_s4">Duże zapasy baterii i superkondensatorów jako bufor awaryjny</li>
                         </ul>
                     </div>
 
                     <!-- 10 -->
                     <div class="threat-card" data-severity="wysokie" data-category="biologiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Niedobory żywności i wody</span>
+                            <span class="threat-name" data-i18n="zag_c10_name">Niedobory żywności i wody</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Biologiczne</span>
-                                <span class="badge-severity wysokie">Wysokie</span>
+                                <span class="badge-category" data-i18n="zag_cat_bio">Biologiczne</span>
+                                <span class="badge-severity wysokie" data-i18n="zag_sevb_wys">Wysokie</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Hydroponika i aeroponika w zamkniętych modułach z lampami LED (NASA pracuje nad tym aktywnie)</li>
-                            <li>Wydobycie wody z lodu podpowierzchniowego (wykryto ogromne złoża wody na Marsie)</li>
-                            <li>Bioreaktor wytwarzający białka z CO₂ i wodoru (technologia Air Protein)</li>
-                            <li>Hodowla owadów i glonów jako efektywne białko zwierzęce</li>
-                            <li>Recykling 100% wody z oddechu, moczu i kondensacji (jak na ISS, ale sprawniejszy)</li>
+                            <li data-i18n="zag_c10_s1">Hydroponika i aeroponika w zamkniętych modułach z lampami LED (NASA pracuje nad tym aktywnie)</li>
+                            <li data-i18n="zag_c10_s2">Wydobycie wody z lodu podpowierzchniowego (wykryto ogromne złoża wody na Marsie)</li>
+                            <li data-i18n="zag_c10_s3">Bioreaktor wytwarzający białka z CO₂ i wodoru (technologia Air Protein)</li>
+                            <li data-i18n="zag_c10_s4">Hodowla owadów i glonów jako efektywne białko zwierzęce</li>
+                            <li data-i18n="zag_c10_s5">Recykling 100% wody z oddechu, moczu i kondensacji (jak na ISS, ale sprawniejszy)</li>
                         </ul>
                     </div>
 
                     <!-- 11 -->
                     <div class="threat-card" data-severity="wysokie" data-category="biologiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Skażenie mikrobiologiczne</span>
+                            <span class="threat-name" data-i18n="zag_c11_name">Skażenie mikrobiologiczne</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Biologiczne</span>
-                                <span class="badge-severity wysokie">Wysokie</span>
+                                <span class="badge-category" data-i18n="zag_cat_bio">Biologiczne</span>
+                                <span class="badge-severity wysokie" data-i18n="zag_sevb_wys">Wysokie</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Rygorystyczna sterylizacja misji bezzałogowych przed wysłaniem (standardy COSPAR)</li>
-                            <li>Kwarantanna astronautów przed i po misji</li>
-                            <li>Strefy ochrony planetarnej — zakaz lądowania załogowego w obszarach możliwego życia marsjańskiego</li>
-                            <li>Sekwencjonowanie genetyczne w czasie rzeczywistym wewnątrz bazy — wykrycie obcych organizmów</li>
+                            <li data-i18n="zag_c11_s1">Rygorystyczna sterylizacja misji bezzałogowych przed wysłaniem (standardy COSPAR)</li>
+                            <li data-i18n="zag_c11_s2">Kwarantanna astronautów przed i po misji</li>
+                            <li data-i18n="zag_c11_s3">Strefy ochrony planetarnej — zakaz lądowania załogowego w obszarach możliwego życia marsjańskiego</li>
+                            <li data-i18n="zag_c11_s4">Sekwencjonowanie genetyczne w czasie rzeczywistym wewnątrz bazy — wykrycie obcych organizmów</li>
                         </ul>
                     </div>
 
                     <!-- 12 -->
                     <div class="threat-card" data-severity="wysokie" data-category="logistyczne">
                         <div class="threat-header">
-                            <span class="threat-name">Brak możliwości ewakuacji</span>
+                            <span class="threat-name" data-i18n="zag_c12_name">Brak możliwości ewakuacji</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Logistyczne</span>
-                                <span class="badge-severity wysokie">Wysokie</span>
+                                <span class="badge-category" data-i18n="zag_cat_log">Logistyczne</span>
+                                <span class="badge-severity wysokie" data-i18n="zag_sevb_wys">Wysokie</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Stały statek ratunkowy gotowy do startu w każdej chwili przy każdej bazie</li>
-                            <li>Napędy jądrowe (NTP/NEP) skracające podróż do 3–4 miesięcy i zwiększające okna startowe</li>
-                            <li>Telemedycyna i robotyka chirurgiczna na miejscu — leczenie bez konieczności powrotu</li>
-                            <li>Budowa dużej, samowystarczalnej kolonii eliminującej potrzebę ewakuacji</li>
+                            <li data-i18n="zag_c12_s1">Stały statek ratunkowy gotowy do startu w każdej chwili przy każdej bazie</li>
+                            <li data-i18n="zag_c12_s2">Napędy jądrowe (NTP/NEP) skracające podróż do 3–4 miesięcy i zwiększające okna startowe</li>
+                            <li data-i18n="zag_c12_s3">Telemedycyna i robotyka chirurgiczna na miejscu — leczenie bez konieczności powrotu</li>
+                            <li data-i18n="zag_c12_s4">Budowa dużej, samowystarczalnej kolonii eliminującej potrzebę ewakuacji</li>
                         </ul>
                     </div>
 
                     <!-- 13 -->
                     <div class="threat-card" data-severity="umiarkowane" data-category="spoleczne">
                         <div class="threat-header">
-                            <span class="threat-name">Konflikty społeczne i prawne</span>
+                            <span class="threat-name" data-i18n="zag_c13_name">Konflikty społeczne i prawne</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Społeczne</span>
-                                <span class="badge-severity umiarkowane">Umiarkowane</span>
+                                <span class="badge-category" data-i18n="zag_cat_spol">Społeczne</span>
+                                <span class="badge-severity umiarkowane" data-i18n="zag_sevb_umiar">Umiarkowane</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Stworzenie Traktatu Marsjańskiego — międzynarodowego prawa regulującego kolonizację (wzorem Traktatu Antarktycznego)</li>
-                            <li>Demokratyczne zarządzanie kolonią z lokalną autonomią od Ziemi</li>
-                            <li>Neutralna agencja ONZ nadzorująca zasoby i konflikty</li>
-                            <li>Wypracowanie modelu własności wspólnotowej zasobów nieodnawialnych</li>
+                            <li data-i18n="zag_c13_s1">Stworzenie Traktatu Marsjańskiego — międzynarodowego prawa regulującego kolonizację (wzorem Traktatu Antarktycznego)</li>
+                            <li data-i18n="zag_c13_s2">Demokratyczne zarządzanie kolonią z lokalną autonomią od Ziemi</li>
+                            <li data-i18n="zag_c13_s3">Neutralna agencja ONZ nadzorująca zasoby i konflikty</li>
+                            <li data-i18n="zag_c13_s4">Wypracowanie modelu własności wspólnotowej zasobów nieodnawialnych</li>
                         </ul>
                     </div>
 
                     <!-- 14 -->
                     <div class="threat-card" data-severity="umiarkowane" data-category="srodowiskowe">
                         <div class="threat-header">
-                            <span class="threat-name">Aktywność sejsmiczna</span>
+                            <span class="threat-name" data-i18n="zag_c14_name">Aktywność sejsmiczna</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Środowiskowe</span>
-                                <span class="badge-severity umiarkowane">Umiarkowane</span>
+                                <span class="badge-category" data-i18n="zag_cat_srod">Środowiskowe</span>
+                                <span class="badge-severity umiarkowane" data-i18n="zag_sevb_umiar">Umiarkowane</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Sieć sejsmometrów wokół bazy do wczesnego ostrzegania</li>
-                            <li>Budownictwo antysejsmiczne — elastyczne połączenia modułów i absorbery wstrząsów</li>
-                            <li>Lokalizacja baz z dala od tektonicznie aktywnych regionów (Valles Marineris, Olympus Mons)</li>
-                            <li>Struktury podziemne są naturalnie odporniejsze na wstrząsy powierzchniowe</li>
+                            <li data-i18n="zag_c14_s1">Sieć sejsmometrów wokół bazy do wczesnego ostrzegania</li>
+                            <li data-i18n="zag_c14_s2">Budownictwo antysejsmiczne — elastyczne połączenia modułów i absorbery wstrząsów</li>
+                            <li data-i18n="zag_c14_s3">Lokalizacja baz z dala od tektonicznie aktywnych regionów (Valles Marineris, Olympus Mons)</li>
+                            <li data-i18n="zag_c14_s4">Struktury podziemne są naturalnie odporniejsze na wstrząsy powierzchniowe</li>
                         </ul>
                     </div>
 
                     <!-- 15 -->
                     <div class="threat-card" data-severity="umiarkowane" data-category="logistyczne">
                         <div class="threat-header">
-                            <span class="threat-name">Uzależnienie od Ziemi</span>
+                            <span class="threat-name" data-i18n="zag_c15_name">Uzależnienie od Ziemi</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Logistyczne</span>
-                                <span class="badge-severity umiarkowane">Umiarkowane</span>
+                                <span class="badge-category" data-i18n="zag_cat_log">Logistyczne</span>
+                                <span class="badge-severity umiarkowane" data-i18n="zag_sevb_umiar">Umiarkowane</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Druk 3D z lokalnych materiałów — produkcja części zamiennych i narzędzi na miejscu</li>
-                            <li>Wydobycie i przetwórstwo surowców marsjańskich (żelazo, krzem, siarka)</li>
-                            <li>Lokalna produkcja paliwa (metan + tlen z CO₂ i wody) — technologia Sabatiera</li>
-                            <li>Stopniowe budowanie pełnej samowystarczalności w ciągu 20–50 lat od założenia kolonii</li>
+                            <li data-i18n="zag_c15_s1">Druk 3D z lokalnych materiałów — produkcja części zamiennych i narzędzi na miejscu</li>
+                            <li data-i18n="zag_c15_s2">Wydobycie i przetwórstwo surowców marsjańskich (żelazo, krzem, siarka)</li>
+                            <li data-i18n="zag_c15_s3">Lokalna produkcja paliwa (metan + tlen z CO₂ i wody) — technologia Sabatiera</li>
+                            <li data-i18n="zag_c15_s4">Stopniowe budowanie pełnej samowystarczalności w ciągu 20–50 lat od założenia kolonii</li>
                         </ul>
                     </div>
 
                     <!-- 16 -->
                     <div class="threat-card" data-severity="latwe" data-category="srodowiskowe">
                         <div class="threat-header">
-                            <span class="threat-name">Kurz na panelach solarnych</span>
+                            <span class="threat-name" data-i18n="zag_c16_name">Kurz na panelach solarnych</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Środowiskowe</span>
-                                <span class="badge-severity latwe">Łatwe</span>
+                                <span class="badge-category" data-i18n="zag_cat_srod">Środowiskowe</span>
+                                <span class="badge-severity latwe" data-i18n="zag_sevb_latwe">Łatwe</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Elektrostatyczne systemy samooczyszczania paneli (badane przez NASA od 2020 r.)</li>
-                            <li>Łaziki-czyściki autonomicznie czyszczące panele podczas burz pyłowych</li>
-                            <li>Pionowe lub pochylone montaże paneli zmniejszające osadzanie się kurzu</li>
-                            <li>Reaktory nuklearne jako główne źródło energii — eliminują zależność od słońca</li>
+                            <li data-i18n="zag_c16_s1">Elektrostatyczne systemy samooczyszczania paneli (badane przez NASA od 2020 r.)</li>
+                            <li data-i18n="zag_c16_s2">Łaziki-czyściki autonomicznie czyszczące panele podczas burz pyłowych</li>
+                            <li data-i18n="zag_c16_s3">Pionowe lub pochylone montaże paneli zmniejszające osadzanie się kurzu</li>
+                            <li data-i18n="zag_c16_s4">Reaktory nuklearne jako główne źródło energii — eliminują zależność od słońca</li>
                         </ul>
                     </div>
 
                     <!-- 17 -->
                     <div class="threat-card" data-severity="latwe" data-category="psychologiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Nuda i monotonia codzienności</span>
+                            <span class="threat-name" data-i18n="zag_c17_name">Nuda i monotonia codzienności</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Psychologiczne</span>
-                                <span class="badge-severity latwe">Łatwe</span>
+                                <span class="badge-category" data-i18n="zag_cat_psych">Psychologiczne</span>
+                                <span class="badge-severity latwe" data-i18n="zag_sevb_latwe">Łatwe</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Szeroka biblioteka cyfrowa — filmy, muzyka, książki, gry — dostępna offline</li>
-                            <li>Wirtualna rzeczywistość (VR) z symulacją środowisk ziemskich i nowych światów</li>
-                            <li>Przestrzenie wspólne zaprojektowane pod relaks, sport i hobby wewnątrz bazy</li>
-                            <li>Regularne misje terenowe i eksploracja marsjańskiego terenu jako forma przygody</li>
+                            <li data-i18n="zag_c17_s1">Szeroka biblioteka cyfrowa — filmy, muzyka, książki, gry — dostępna offline</li>
+                            <li data-i18n="zag_c17_s2">Wirtualna rzeczywistość (VR) z symulacją środowisk ziemskich i nowych światów</li>
+                            <li data-i18n="zag_c17_s3">Przestrzenie wspólne zaprojektowane pod relaks, sport i hobby wewnątrz bazy</li>
+                            <li data-i18n="zag_c17_s4">Regularne misje terenowe i eksploracja marsjańskiego terenu jako forma przygody</li>
                         </ul>
                     </div>
 
                     <!-- 18 -->
                     <div class="threat-card" data-severity="latwe" data-category="biologiczne">
                         <div class="threat-header">
-                            <span class="threat-name">Dezorientacja dobowa (sol marsjański)</span>
+                            <span class="threat-name" data-i18n="zag_c18_name">Dezorientacja dobowa (sol marsjański)</span>
                             <div class="threat-badges">
-                                <span class="badge-category">Biologiczne</span>
-                                <span class="badge-severity latwe">Łatwe</span>
+                                <span class="badge-category" data-i18n="zag_cat_bio">Biologiczne</span>
+                                <span class="badge-severity latwe" data-i18n="zag_sevb_latwe">Łatwe</span>
                             </div>
                         </div>
                         <div class="threat-divider"></div>
-                        <p class="threat-solutions-label">JAK TO ZWALCZYĆ?</p>
+                        <p class="threat-solutions-label" data-i18n="zag_how">JAK TO ZWALCZYĆ?</p>
                         <ul class="threat-solutions">
-                            <li>Oświetlenie LED wewnątrz bazy synchronizowane z 24h 37min cyklem marsjańskim</li>
-                            <li>Zegary i harmonogramy pracy dostosowane do sola (dnia marsjańskiego), nie doby ziemskiej</li>
-                            <li>Melatonina i chrono-farmakologia wspomagająca adaptację rytmu dobowego</li>
-                            <li>Stopniowa aklimatyzacja załogi już w trakcie lotu międzyplanetarnego</li>
+                            <li data-i18n="zag_c18_s1">Oświetlenie LED wewnątrz bazy synchronizowane z 24h 37min cyklem marsjańskim</li>
+                            <li data-i18n="zag_c18_s2">Zegary i harmonogramy pracy dostosowane do sola (dnia marsjańskiego), nie doby ziemskiej</li>
+                            <li data-i18n="zag_c18_s3">Melatonina i chrono-farmakologia wspomagająca adaptację rytmu dobowego</li>
+                            <li data-i18n="zag_c18_s4">Stopniowa aklimatyzacja załogi już w trakcie lotu międzyplanetarnego</li>
                         </ul>
                     </div>
 
@@ -504,7 +504,7 @@
         </div>
     </footer>
 
-    
+
     <script src="js/script.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/i18n.js"></script>
@@ -518,7 +518,8 @@
 
         function updateCounter() {
             const visible = document.querySelectorAll('.threat-card:not(.hidden)').length;
-            counter.textContent = `WYŚWIETLONO: ${visible} / ${total}`;
+            const label = (window.i18n ? window.i18n.t('zag_shown') : 'WYŚWIETLONO:');
+            counter.textContent = `${label} ${visible} / ${total}`;
         }
 
         filterBtns.forEach(btn => {
@@ -549,10 +550,12 @@
             });
         });
 
+        // Re-render counter label when the language changes.
+        document.addEventListener('languageChanged', updateCounter);
+
         updateCounter();
     });
     </script>
 </body>
 
 </html>
-
