@@ -45,13 +45,18 @@
     color: white;
 }
 
-body,
+/* Uwaga: overflow ustawiamy TYLKO na body. Gdy html i body mają naraz
+   overflow + height: 100%, przewija się <body> zamiast okna — wtedy
+   window.scrollY = 0 i nie działają GSAP ScrollTrigger ani chowanie navbara. */
 html {
+    background-color: #000;
+    scroll-behavior: smooth;
+}
+
+body {
     width: 100%;
-    height: 100%;
     background-color: #000;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 /* Typography styles */
@@ -957,207 +962,306 @@ details.resource-category[open] summary.category-title::after {
     color: #00ff88;
 }
 
-/* --- KARDASHEV SCALE SIDE-NAV VERSION --- */
-.kardashev-container {
+/* ============================================
+   KARDASHEV — pełnoekranowy "zoom" w stylu SpaceX
+   Czysty CSS (tylko transform + opacity), pętla 3 etapów.
+   Kamera ciągle się przybliża, a na końcu etapu "przelatuje"
+   przez obraz do następnego: Ziemia → Słońce → galaktyka.
+   ============================================ */
+.kz {
+    --kz-total: 18s;            /* cała pętla = 3 etapy × 6 s */
     position: relative;
-    width: 100vw;
-    height: 90vh;
-    min-height: 750px;
-    background-color: #000;
+    height: 100vh;
+    min-height: 620px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
+    background: #000;
+    isolation: isolate;
 }
 
-.kardashev-bg {
+.kz-media {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: 0;
+}
+
+.kz-img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
     opacity: 0;
-    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 20s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 1.5s ease;
+    will-change: transform, opacity;
+    animation: var(--kz-total) cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* object-position = transform-origin: kamera celuje w obiekt, także na wąskich ekranach */
+.kz-img-1 { object-position: 58% 50%; transform-origin: 58% 50%; opacity: 1; animation-name: kzImg1; }
+.kz-img-2 { object-position: 67% 50%; transform-origin: 67% 50%; animation-name: kzImg2; }
+.kz-img-3 { object-position: 52% 47%; transform-origin: 52% 47%; animation-name: kzImg3; }
+
+/* Gwiazdy lecące na widza (dwie warstwy przesunięte w czasie) */
+.kz-stars {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background-image:
+        radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 27% 72%, #fff 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 41% 33%, #cfe3ff 50%, transparent 51%),
+        radial-gradient(1px 1px at 63% 12%, #fff 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 78% 64%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 88% 28%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 55% 86%, #ffe1c9 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 8% 54%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 34% 8%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 93% 82%, #cfe3ff 50%, transparent 51%);
+    will-change: transform, opacity;
+    animation: kzWarp 4s linear infinite;
+}
+
+.kz-stars-b {
+    background-image:
+        radial-gradient(1px 1px at 18% 40%, #fff 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 36% 90%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 49% 22%, #fff 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 71% 38%, #cfe3ff 50%, transparent 51%),
+        radial-gradient(1px 1px at 84% 9%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 66% 70%, #fff 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 22% 12%, #ffe1c9 50%, transparent 51%),
+        radial-gradient(1px 1px at 5% 85%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 96% 52%, #fff 50%, transparent 51%);
+    animation-delay: -2s;
+}
+
+/* Przyciemnienie pod tekstem (dół) i pod navbarem (góra) */
+.kz-shade {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0) 70%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 25%);
+}
+
+.kz-label {
+    position: absolute;
     z-index: 1;
-    filter: scale(1.05);
-}
-
-.kardashev-bg.active {
-    opacity: 0.65;
-    transform: scale(1.2) rotate(0.001deg);
-}
-
-.bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        rgba(0,0,0,1) 0%, 
-        rgba(0,0,0,0.3) 50%, 
-        rgba(0,0,0,0.8) 100%);
-    z-index: 2;
-}
-
-.kardashev-wrapper {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0 100px;
-    align-items: center;
-}
-
-/* Lewa nawigacja */
-.kardashev-nav {
-    flex: 0 0 400px;
-    position: relative;
-    padding-left: 50px;
-}
-
-/* Dynamiczny suwak boczny */
-.kardashev-nav::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: rgba(255,255,255,0.1);
-}
-
-.nav-header {
-    margin-bottom: 50px;
-}
-
-.nav-label {
-    font-size: 0.7rem;
-    color: #555;
+    top: 120px;
+    left: 8%;
+    right: 8%;
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
     letter-spacing: 4px;
-    font-weight: 700;
+    color: #e6e6e6;
 }
 
-.kardashev-list-vertical {
-    list-style: none;
+.kz-copy {
+    position: absolute;
+    z-index: 1;
+    left: 8%;
+    bottom: 150px;
+    width: min(780px, 84%);
+    display: grid;
+}
+
+.kz-stage {
+    grid-area: 1 / 1;
+    align-self: end;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: var(--kz-total) ease-in-out infinite;
 }
 
-.kardashev-btn {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    cursor: pointer;
-    padding: 20px 0;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    opacity: 0.3;
-    position: relative;
+.kz-stage-1 { opacity: 1; animation-name: kzT1; }
+.kz-stage-2 { animation-name: kzT2; }
+.kz-stage-3 { animation-name: kzT3; }
+
+.kz-tag {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 4px;
 }
 
-/* Aktywny wskaźnik */
-.kardashev-btn::after {
-    content: '';
-    position: absolute;
-    left: -50px;
-    top: 50%;
-    width: 0;
-    height: 1px;
-    background: #fff;
-    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: translateY(-50%);
-}
-
-.kardashev-btn:hover {
-    opacity: 0.7;
-    padding-left: 15px;
-}
-
-.kardashev-btn.active {
-    opacity: 1;
-}
-
-.kardashev-btn.active::after {
-    width: 30px;
-}
-
-.btn-num {
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: #777;
-    font-variant-numeric: tabular-nums;
-}
-
-.btn-text {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-/* Główna treść */
-.kardashev-main {
-    flex: 1;
-    padding-left: 120px;
-}
-
-.kardashev-title {
-    font-size: 0.9rem;
-    color: #444;
-    letter-spacing: 6px;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-.active-description-large p {
-    font-size: 3.8rem;
-    line-height: 1.05;
+.kz-title {
+    margin: 0;
+    font-size: clamp(2rem, 4.4vw, 4rem);
     font-weight: 800;
-    max-width: 850px;
-    text-transform: none;
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    line-height: 1;
+    letter-spacing: 0.5px;
 }
 
-.active-description-large p span {
-    display: block;
-    font-size: 1.1rem;
-    color: #aaa;
-    opacity: 0.8;
-    margin-bottom: 15px;
+.kz-cta {
+    position: absolute;
+    z-index: 1;
+    left: 8%;
+    bottom: 72px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 28px;
+    border: 2px solid #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
     letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 300;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
-    .kardashev-wrapper {
-        flex-direction: column;
-        padding: 60px 40px;
+.kz-cta:hover,
+.kz-cta:focus-visible {
+    background: #fff;
+    color: #000;
+}
+
+.kz-progress {
+    position: absolute;
+    z-index: 1;
+    right: 8%;
+    bottom: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.kz-segs {
+    display: flex;
+    gap: 8px;
+}
+
+.kz-segs span {
+    position: relative;
+    width: 96px;
+    height: 2px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.kz-segs i {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: var(--kz-total) linear infinite;
+}
+
+.kz-segs span:nth-child(1) i { animation-name: kzSeg1; }
+.kz-segs span:nth-child(2) i { animation-name: kzSeg2; }
+.kz-segs span:nth-child(3) i { animation-name: kzSeg3; }
+
+.kz-humanity {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #cfcfcf;
+}
+
+/* Poza ekranem animacja stoi (oszczędza CPU/GPU); JS przełącza klasę */
+.kz.is-paused .kz-img,
+.kz.is-paused .kz-stars,
+.kz.is-paused .kz-stage,
+.kz.is-paused .kz-segs i {
+    animation-play-state: paused;
+}
+
+@keyframes kzImg1 {
+    0%     { opacity: 1; transform: scale(1); }
+    28%    { opacity: 1; transform: scale(1.22); }
+    33.3%  { opacity: 0; transform: scale(2.6); }
+    94.9%  { opacity: 0; transform: scale(0.8); }
+    100%   { opacity: 1; transform: scale(1); }
+}
+@keyframes kzImg2 {
+    0%, 28% { opacity: 0; transform: scale(0.8); }
+    33.3%   { opacity: 1; transform: scale(1); }
+    61.6%   { opacity: 1; transform: scale(1.22); }
+    66.6%   { opacity: 0; transform: scale(2.6); }
+    100%    { opacity: 0; transform: scale(2.6); }
+}
+@keyframes kzImg3 {
+    0%, 61.6% { opacity: 0; transform: scale(0.8); }
+    66.6%     { opacity: 1; transform: scale(1); }
+    95%       { opacity: 1; transform: scale(1.22); }
+    100%      { opacity: 0; transform: scale(2.6); }
+}
+@keyframes kzWarp {
+    0%   { opacity: 0; transform: scale(0.4); }
+    25%  { opacity: 0.9; }
+    100% { opacity: 0; transform: scale(2.4); }
+}
+@keyframes kzT1 {
+    0%    { opacity: 1; transform: none; }
+    27%   { opacity: 1; transform: none; }
+    30.5% { opacity: 0; transform: translateY(-24px); }
+    96%   { opacity: 0; transform: translateY(32px); }
+    100%  { opacity: 1; transform: none; }
+}
+@keyframes kzT2 {
+    0%, 31% { opacity: 0; transform: translateY(32px); }
+    36%     { opacity: 1; transform: none; }
+    60.5%   { opacity: 1; transform: none; }
+    64%     { opacity: 0; transform: translateY(-24px); }
+    100%    { opacity: 0; transform: translateY(-24px); }
+}
+@keyframes kzT3 {
+    0%, 64% { opacity: 0; transform: translateY(32px); }
+    69%     { opacity: 1; transform: none; }
+    94%     { opacity: 1; transform: none; }
+    97.5%   { opacity: 0; transform: translateY(-24px); }
+    100%    { opacity: 0; transform: translateY(-24px); }
+}
+@keyframes kzSeg1 { 0% { transform: scaleX(0); } 33.3%, 100% { transform: scaleX(1); } }
+@keyframes kzSeg2 { 0%, 33.3% { transform: scaleX(0); } 66.6%, 100% { transform: scaleX(1); } }
+@keyframes kzSeg3 { 0%, 66.6% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+
+@media (max-width: 768px) {
+    .kz-label {
+        top: 100px;
+        left: 20px;
+        right: 20px;
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+    }
+
+    .kz-copy {
+        left: 20px;
+        width: calc(100% - 40px);
+        bottom: 190px;
+    }
+
+    .kz-tag {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .kz-cta {
+        left: 20px;
+        bottom: 110px;
+    }
+
+    .kz-progress {
+        left: 20px;
+        right: auto;
+        bottom: 48px;
         align-items: flex-start;
     }
-    
-    .kardashev-nav {
-        flex: none;
-        width: 100%;
-        margin-bottom: 60px;
-        padding-left: 0;
-    }
 
-    .kardashev-nav::before { display: none; }
-    .kardashev-btn::after { display: none; }
-
-    .kardashev-main {
-        padding-left: 0;
+    .kz-segs span {
+        width: 72px;
     }
-    
-    .active-description-large p {
-        font-size: 2.2rem;
+}
+
+/* Ograniczony ruch: statyczny pierwszy kadr (Ziemia + etap I) */
+@media (prefers-reduced-motion: reduce) {
+    .kz-img,
+    .kz-stars,
+    .kz-stage,
+    .kz-segs i {
+        animation: none;
     }
 }
 
@@ -2029,82 +2133,4 @@ details.resource-category[open] summary.category-title::after {
 
 .tci-specs li b {
     color: #ccc;
-}
-
-/* ============================================
-   KARDASHEV — animacja sterowana scrollem (GSAP)
-   ============================================ */
-/* Podczas pinowania sekcja wypełnia cały ekran. */
-.kardashev-container.gsap-enabled {
-    height: 100vh;
-    min-height: 100vh;
-}
-
-/* Gdy aktywny jest tryb GSAP, wyłączamy płynne przejścia CSS,
-   żeby nie kolidowały ze scrubowaniem ScrollTriggera. */
-.kardashev-container.gsap-enabled .kardashev-bg {
-    transition: none;
-    will-change: transform, opacity;
-}
-
-.kardashev-container.gsap-enabled .active-description-large p {
-    transition: none;
-    will-change: transform, opacity, filter;
-}
-
-/* Pasek postępu wzdłuż lewej krawędzi nawigacji */
-.kardashev-progress {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.kardashev-progress-fill {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.25) 100%);
-    transform: scaleY(0);
-    transform-origin: top center;
-}
-
-/* Podpowiedź o scrollowaniu (widoczna tylko na początku sekcji) */
-.kardashev-scroll-hint {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    pointer-events: none;
-}
-
-.kardashev-scroll-hint .ksh-line {
-    width: 1px;
-    height: 36px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent);
-    animation: kshPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes kshPulse {
-    0%, 100% { opacity: 0.2; transform: scaleY(0.6); }
-    50% { opacity: 1; transform: scaleY(1); }
-}
-
-@media (max-width: 1100px) {
-    .kardashev-progress,
-    .kardashev-scroll-hint { display: none; }
 }

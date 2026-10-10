@@ -55,11 +55,15 @@ _addT({
     "pillar_6_desc": "Interaktywny harmonogram ekspansji — od pierwszych testów Starship po budowę samowystarczalnego miasta. Poznaj fakty i daty graniczne naszej misji.",
     "learn_more": "DOWIEDZ SIĘ WIĘCEJ &rarr;",
 
-    "kardashev_level": "POZIOM ROZWOJU",
-    "kardashev_type1": "TYP I - PLANETARNY",
-    "kardashev_type2": "TYP II - GWIEZDNY",
-    "kardashev_type3": "TYP III - GALAKTYCZNY",
     "kardashev_main_title": "DĄŻYMY DO BYCIA CYWILIZACJĄ GALAKTYCZNĄ",
+    "kardashev_t1_tag": "01 · TYP I — PLANETARNY · ≈ 10¹⁶ W",
+    "kardashev_t1_title": "Wykorzystanie pełnego potencjału energetycznego planety",
+    "kardashev_t2_tag": "02 · TYP II — GWIEZDNY · ≈ 10²⁶ W",
+    "kardashev_t2_title": "Wykorzystanie całkowitej mocy macierzystej gwiazdy",
+    "kardashev_t3_tag": "03 · TYP III — GALAKTYCZNY · ≈ 10³⁶ W",
+    "kardashev_t3_title": "Wykorzystanie całkowitej mocy całej galaktyki",
+    "kardashev_cta": "POZNAJ MISJĘ",
+    "kardashev_humanity": "LUDZKOŚĆ DZIŚ ≈ 0,73 / 3",
 
     "footer_copyright": "&copy; 2026 MONTE. Czyniąc ludzkość gatunkiem wieloplanetarnym."
 }, {
@@ -106,11 +110,15 @@ _addT({
     "pillar_6_desc": "Interactive expansion schedule — from initial Starship tests to building a self-sustaining city. Discover the facts and milestone dates of our mission.",
     "learn_more": "LEARN MORE &rarr;",
 
-    "kardashev_level": "DEVELOPMENT LEVEL",
-    "kardashev_type1": "TYPE I - PLANETARY",
-    "kardashev_type2": "TYPE II - STELLAR",
-    "kardashev_type3": "TYPE III - GALACTIC",
     "kardashev_main_title": "STRIVING TO BE A GALACTIC CIVILIZATION",
+    "kardashev_t1_tag": "01 · TYPE I — PLANETARY · ≈ 10¹⁶ W",
+    "kardashev_t1_title": "Harnessing the full energy potential of a planet",
+    "kardashev_t2_tag": "02 · TYPE II — STELLAR · ≈ 10²⁶ W",
+    "kardashev_t2_title": "Harnessing the total power of its host star",
+    "kardashev_t3_tag": "03 · TYPE III — GALACTIC · ≈ 10³⁶ W",
+    "kardashev_t3_title": "Harnessing the total power of an entire galaxy",
+    "kardashev_cta": "EXPLORE THE MISSION",
+    "kardashev_humanity": "HUMANITY TODAY ≈ 0.73 / 3",
 
     "footer_copyright": "&copy; 2026 MONTE. Making humanity a multiplanetary species."
 });
@@ -1285,18 +1293,4 @@ _addT({
     "resdb_27_note": "Not yet discovered on Mars — probability of discovery is 1.77% (as of 04/06/2026)"
 });
 
-const kardashevTranslations = {
-    pl: {
-        'type1': '<span>Wykorzystanie pełnego potencjału</span> energetycznego planety',
-        'type2': '<span>Wykorzystanie całkowitej mocy</span> macierzystej gwiazdy',
-        'type3': '<span>Wykorzystanie całkowitej mocy</span> całej galaktyki'
-    },
-    en: {
-        'type1': '<span>Utilizing the full energy potential</span> of the planet',
-        'type2': '<span>Utilizing the total power</span> of the host star',
-        'type3': '<span>Utilizing the total power</span> of the entire galaxy'
-    }
-};
-
 window.translations = translations;
-window.kardashevTranslations = kardashevTranslations;

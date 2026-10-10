@@ -58,16 +58,6 @@
 
         applyStaticTranslations();
 
-        // Kardashev active description (index.html only)
-        if (typeof window.kardashevTranslations !== 'undefined') {
-            const activeBtn = document.querySelector('.kardashev-btn.active');
-            const mainDesc = document.getElementById('desc-text-main');
-            if (activeBtn && mainDesc) {
-                const type = activeBtn.getAttribute('data-type');
-                mainDesc.innerHTML = window.kardashevTranslations[lang][type];
-            }
-        }
-
         // Let page-specific scripts re-render any dynamic content.
         document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
     }

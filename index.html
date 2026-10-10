@@ -8,7 +8,7 @@
         content="Projekt MONTE - Mars Orbital Network Terraform Exploration. Oficjalna strona programu kolonizacji i terraformacji Marsa.">
     <title>MONTE PROJECT</title>
     <link rel="icon" type="image/png" href="icon/faviconmars.png">
-    <link rel="stylesheet" href="css/style.css?v=1.3">
+    <link rel="stylesheet" href="css/style.css?v=1.5">
     <style>
         .lang-switcher {
             display: flex;
@@ -205,49 +205,38 @@
             </div>
         </section>
 
-        <section id="kardashev" class="kardashev-container">
-            <!-- Tła animowane -->
-            <div class="kardashev-bg active" id="bg-type1" style="background-image: url('img/earth.png');"></div>
-            <div class="kardashev-bg" id="bg-type2" style="background-image: url('img/sun.png');"></div>
-            <div class="kardashev-bg" id="bg-type3" style="background-image: url('img/universe.png');"></div>
-            <div class="bg-overlay"></div>
+        <section id="kardashev" class="kz is-paused" aria-labelledby="kz-heading">
+            <div class="kz-media" aria-hidden="true">
+                <img class="kz-img kz-img-1" src="img/earth.jpg" alt="" decoding="async">
+                <img class="kz-img kz-img-2" src="img/sun.jpg" alt="" decoding="async">
+                <img class="kz-img kz-img-3" src="img/universe.jpg" alt="" decoding="async">
+                <div class="kz-stars"></div>
+                <div class="kz-stars kz-stars-b"></div>
+                <div class="kz-shade"></div>
+            </div>
 
-            <div class="kardashev-wrapper">
-                <!-- Lewa nawigacja -->
-                <nav class="kardashev-nav">
-                    <div class="kardashev-progress"><div class="kardashev-progress-fill"></div></div>
-                    <div class="nav-header">
-                        <span class="nav-label" data-i18n="kardashev_level">POZIOM ROZWOJU</span>
-                    </div>
-                    <ul class="kardashev-list-vertical">
-                        <li class="kardashev-btn active" data-type="type1">
-                            <span class="btn-num">01</span>
-                            <span class="btn-text" data-i18n="kardashev_type1">TYP I - PLANETARNY</span>
-                        </li>
-                        <li class="kardashev-btn" data-type="type2">
-                            <span class="btn-num">02</span>
-                            <span class="btn-text" data-i18n="kardashev_type2">TYP II - GWIEZDNY</span>
-                        </li>
-                        <li class="kardashev-btn" data-type="type3">
-                            <span class="btn-num">03</span>
-                            <span class="btn-text" data-i18n="kardashev_type3">TYP III - GALAKTYCZNY</span>
-                        </li>
-                    </ul>
-                </nav>
+            <h2 id="kz-heading" class="kz-label" data-i18n="kardashev_main_title">DĄŻYMY DO BYCIA CYWILIZACJĄ GALAKTYCZNĄ</h2>
 
-                <!-- Główna treść -->
-                <div class="kardashev-main">
-                    <h2 class="kardashev-title" data-i18n="kardashev_main_title">DĄŻYMY DO BYCIA CYWILIZACJĄ GALAKTYCZNĄ
-                    </h2>
-                    <div class="active-description-large">
-                        <p id="desc-text-main"><span>Wykorzystanie pełnego potencjału</span> energetycznego planety</p>
-                    </div>
+            <div class="kz-copy">
+                <div class="kz-stage kz-stage-1">
+                    <span class="kz-tag" data-i18n="kardashev_t1_tag">01 · TYP I — PLANETARNY · ≈ 10¹⁶ W</span>
+                    <h3 class="kz-title" data-i18n="kardashev_t1_title">Wykorzystanie pełnego potencjału energetycznego planety</h3>
+                </div>
+                <div class="kz-stage kz-stage-2">
+                    <span class="kz-tag" data-i18n="kardashev_t2_tag">02 · TYP II — GWIEZDNY · ≈ 10²⁶ W</span>
+                    <h3 class="kz-title" data-i18n="kardashev_t2_title">Wykorzystanie całkowitej mocy macierzystej gwiazdy</h3>
+                </div>
+                <div class="kz-stage kz-stage-3">
+                    <span class="kz-tag" data-i18n="kardashev_t3_tag">03 · TYP III — GALAKTYCZNY · ≈ 10³⁶ W</span>
+                    <h3 class="kz-title" data-i18n="kardashev_t3_title">Wykorzystanie całkowitej mocy całej galaktyki</h3>
                 </div>
             </div>
 
-            <div class="kardashev-scroll-hint" id="kardashev-scroll-hint">
-                <span data-i18n="scroll_down">PRZEWIŃ</span>
-                <div class="ksh-line"></div>
+            <a href="misja.html#tresc" class="kz-cta" data-i18n="kardashev_cta">POZNAJ MISJĘ</a>
+
+            <div class="kz-progress" aria-hidden="true">
+                <div class="kz-segs"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+                <span class="kz-humanity" data-i18n="kardashev_humanity">LUDZKOŚĆ DZIŚ ≈ 0,73 / 3</span>
             </div>
         </section>
 
@@ -273,148 +262,23 @@
         </div>
     </footer>
 
-    <!-- GSAP — animacja sekcji Kardashev sterowana scrollem -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <script src="js/script.js?v=1.3"></script>
-    <script src="js/translations.js"></script>
-    <script src="js/i18n.js?v=1.3"></script>
+    <script src="js/script.js?v=1.5"></script>
+    <script src="js/translations.js?v=1.5"></script>
+    <script src="js/i18n.js?v=1.5"></script>
 
     <script>
+    // Sekcja Kardashev: animacja (czysty CSS) gra tylko, gdy sekcja jest na ekranie
     (function () {
-        const container = document.getElementById('kardashev');
-        const btns = Array.prototype.slice.call(document.querySelectorAll('.kardashev-btn'));
-        const mainDesc = document.getElementById('desc-text-main');
-        const hint = document.getElementById('kardashev-scroll-hint');
-        const fill = document.querySelector('.kardashev-progress-fill');
-        if (!container || !btns.length || !mainDesc) return;
-
-        const types = ['type1', 'type2', 'type3'];
-        const bgSel = { type1: '#bg-type1', type2: '#bg-type2', type3: '#bg-type3' };
-
-        function lang() {
-            return window.i18n ? window.i18n.lang : (localStorage.getItem('monte_lang') || 'pl');
-        }
-        function descFor(type) {
-            const dict = window.kardashevTranslations && window.kardashevTranslations[lang()];
-            return (dict && dict[type]) || mainDesc.innerHTML;
-        }
-
-        let currentStage = -1;
-        function setStage(idx, animate) {
-            if (idx === currentStage) return;
-            currentStage = idx;
-            const type = types[idx];
-            btns.forEach(function (b, i) { b.classList.toggle('active', i === idx); });
-            const html = descFor(type);
-            if (animate && window.gsap) {
-                gsap.fromTo(mainDesc,
-                    { opacity: 0, filter: 'blur(14px)', y: 28 },
-                    { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.55, ease: 'power2.out', overwrite: true,
-                      onStart: function () { mainDesc.innerHTML = html; } });
-            } else {
-                mainDesc.innerHTML = html;
-            }
-        }
-
-        // --- Fallback bez GSAP: zwykłe przełączanie klikiem ---
-        if (!window.gsap) {
-            const bgs = document.querySelectorAll('.kardashev-bg');
-            setStage(0, false);
-            btns.forEach(function (b, i) {
-                b.addEventListener('click', function () {
-                    bgs.forEach(function (bg) { bg.classList.remove('active'); });
-                    const bg = document.getElementById('bg-' + types[i]);
-                    if (bg) bg.classList.add('active');
-                    setStage(i, false);
-                });
-            });
+        const kz = document.getElementById('kardashev');
+        if (!kz) return;
+        if (!('IntersectionObserver' in window)) {
+            kz.classList.remove('is-paused');
             return;
         }
-
-        gsap.registerPlugin(ScrollTrigger);
-        const mm = gsap.matchMedia();
-
-        // === DESKTOP: pinowana sekcja sterowana scrollem ===
-        mm.add('(min-width: 1101px)', function () {
-            container.classList.add('gsap-enabled');
-
-            // Stany początkowe teł — kolejne tła startują "z bliska" (efekt oddalania)
-            gsap.set(bgSel.type1, { opacity: 0.7, scale: 1.35 });
-            gsap.set(bgSel.type2, { opacity: 0, scale: 1.9 });
-            gsap.set(bgSel.type3, { opacity: 0, scale: 1.9 });
-            currentStage = -1;
-            setStage(0, false);
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: container,
-                    start: 'top top',
-                    end: function () { return '+=' + (window.innerHeight * 2.8); },
-                    scrub: 1,
-                    pin: true,
-                    anticipatePin: 1,
-                    invalidateOnRefresh: true,
-                    onUpdate: function (self) {
-                        const p = self.progress;
-                        const idx = p < 1 / 3 ? 0 : (p < 2 / 3 ? 1 : 2);
-                        setStage(idx, true);
-                        if (hint) gsap.set(hint, { opacity: p > 0.04 ? 0 : 1 });
-                    }
-                }
-            });
-
-            // TYP I -> TYP II (oddalanie od Ziemi ku Słońcu)
-            tl.to(bgSel.type1, { opacity: 0, scale: 0.6, ease: 'none', duration: 0.32 }, 0.18)
-              .to(bgSel.type2, { opacity: 0.7, scale: 1.1, ease: 'none', duration: 0.32 }, 0.18)
-            // TYP II -> TYP III (oddalanie ku galaktyce)
-              .to(bgSel.type2, { opacity: 0, scale: 0.55, ease: 'none', duration: 0.32 }, 0.50)
-              .to(bgSel.type3, { opacity: 0.78, scale: 1.05, ease: 'none', duration: 0.32 }, 0.50)
-            // pasek postępu rozciąga oś czasu do pełnej długości (0..1)
-              .fromTo(fill, { scaleY: 0 }, { scaleY: 1, ease: 'none', duration: 1 }, 0);
-
-            // Klik w dany typ => płynny przeskok do środka jego etapu
-            const st = tl.scrollTrigger;
-            const handlers = btns.map(function (b, i) {
-                const h = function () {
-                    const center = (i * 2 + 1) / 6;
-                    window.scrollTo({ top: st.start + center * (st.end - st.start), behavior: 'smooth' });
-                };
-                b.style.cursor = 'pointer';
-                b.addEventListener('click', h);
-                return h;
-            });
-
-            return function () {
-                handlers.forEach(function (h, i) { btns[i].removeEventListener('click', h); });
-                container.classList.remove('gsap-enabled');
-                currentStage = -1;
-                gsap.set([bgSel.type1, bgSel.type2, bgSel.type3], { clearProps: 'all' });
-                if (fill) gsap.set(fill, { clearProps: 'all' });
-                if (hint) gsap.set(hint, { clearProps: 'all' });
-            };
-        });
-
-        // === WĄSKIE EKRANY: bez pinowania, przełączanie klikiem ===
-        mm.add('(max-width: 1100px)', function () {
-            const bgs = document.querySelectorAll('.kardashev-bg');
-            currentStage = -1;
-            setStage(0, false);
-            const handlers = btns.map(function (b, i) {
-                const h = function () {
-                    bgs.forEach(function (bg) { bg.classList.remove('active'); });
-                    const bg = document.getElementById('bg-' + types[i]);
-                    if (bg) bg.classList.add('active');
-                    setStage(i, true);
-                };
-                b.addEventListener('click', h);
-                return h;
-            });
-            return function () {
-                handlers.forEach(function (h, i) { btns[i].removeEventListener('click', h); });
-            };
-        });
+        new IntersectionObserver(function (entries) {
+            kz.classList.toggle('is-paused', !entries[0].isIntersecting);
+        }, { threshold: 0.15 }).observe(kz);
     })();
     </script>
 </body>
