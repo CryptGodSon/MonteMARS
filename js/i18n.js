@@ -83,22 +83,6 @@
 
         // Apply the initial language.
         setLanguage(currentLang);
-
-        // Keep Kardashev description in sync when its buttons are clicked.
-        const kBtns = document.querySelectorAll('.kardashev-btn');
-        if (kBtns.length > 0) {
-            kBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    setTimeout(() => {
-                        const type = btn.getAttribute('data-type');
-                        const mainDesc = document.getElementById('desc-text-main');
-                        if (window.kardashevTranslations && mainDesc) {
-                            mainDesc.innerHTML = window.kardashevTranslations[currentLang][type];
-                        }
-                    }, 500); // matches the animation timeout in index.html
-                });
-            });
-        }
     }
 
     if (document.readyState === 'loading') {

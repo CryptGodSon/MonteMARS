@@ -1,11 +1,45 @@
 @import url('https://fonts.cdnfonts.com/css/d-din');
 
+/* D-DIN nie ma polskich liter (poza Ó) — Ą Ć Ę Ł Ń Ś Ź Ż bierzemy z Barlow (krój w stylu DIN) */
+@font-face {
+    font-family: 'MONTE PL';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.0.13/files/barlow-latin-ext-300-normal.woff2') format('woff2');
+    unicode-range: U+0104-0107, U+0118-0119, U+0141-0144, U+015A-015B, U+0179-017C;
+}
+@font-face {
+    font-family: 'MONTE PL';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.0.13/files/barlow-latin-ext-400-normal.woff2') format('woff2');
+    unicode-range: U+0104-0107, U+0118-0119, U+0141-0144, U+015A-015B, U+0179-017C;
+}
+@font-face {
+    font-family: 'MONTE PL';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.0.13/files/barlow-latin-ext-700-normal.woff2') format('woff2');
+    unicode-range: U+0104-0107, U+0118-0119, U+0141-0144, U+015A-015B, U+0179-017C;
+}
+@font-face {
+    font-family: 'MONTE PL';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.0.13/files/barlow-latin-ext-800-normal.woff2') format('woff2');
+    unicode-range: U+0104-0107, U+0118-0119, U+0141-0144, U+015A-015B, U+0179-017C;
+}
+
 /* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'D-DIN', sans-serif;
+    font-family: 'MONTE PL', 'D-DIN', sans-serif;
     text-transform: uppercase;
     /* SpaceX usually uses uppercase everywhere */
     color: white;
@@ -674,6 +708,7 @@ details.resource-category[open] summary.category-title::after {
 
 .footer-links, .footer-copyright {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -1144,7 +1179,7 @@ details.resource-category[open] summary.category-title::after {
     border: 1px solid #333;
     background: transparent;
     color: #aaa;
-    font-family: 'D-DIN', sans-serif;
+    font-family: 'MONTE PL', 'D-DIN', sans-serif;
     font-size: 0.78rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -1366,7 +1401,7 @@ details.resource-category[open] summary.category-title::after {
     border: none;
     border-bottom: 3px solid transparent;
     color: #555;
-    font-family: 'D-DIN', sans-serif;
+    font-family: 'MONTE PL', 'D-DIN', sans-serif;
     font-size: 0.85rem;
     font-weight: bold;
     letter-spacing: 3px;
@@ -1994,4 +2029,82 @@ details.resource-category[open] summary.category-title::after {
 
 .tci-specs li b {
     color: #ccc;
+}
+
+/* ============================================
+   KARDASHEV — animacja sterowana scrollem (GSAP)
+   ============================================ */
+/* Podczas pinowania sekcja wypełnia cały ekran. */
+.kardashev-container.gsap-enabled {
+    height: 100vh;
+    min-height: 100vh;
+}
+
+/* Gdy aktywny jest tryb GSAP, wyłączamy płynne przejścia CSS,
+   żeby nie kolidowały ze scrubowaniem ScrollTriggera. */
+.kardashev-container.gsap-enabled .kardashev-bg {
+    transition: none;
+    will-change: transform, opacity;
+}
+
+.kardashev-container.gsap-enabled .active-description-large p {
+    transition: none;
+    will-change: transform, opacity, filter;
+}
+
+/* Pasek postępu wzdłuż lewej krawędzi nawigacji */
+.kardashev-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.kardashev-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.25) 100%);
+    transform: scaleY(0);
+    transform-origin: top center;
+}
+
+/* Podpowiedź o scrollowaniu (widoczna tylko na początku sekcji) */
+.kardashev-scroll-hint {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.kardashev-scroll-hint .ksh-line {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent);
+    animation: kshPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes kshPulse {
+    0%, 100% { opacity: 0.2; transform: scaleY(0.6); }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+@media (max-width: 1100px) {
+    .kardashev-progress,
+    .kardashev-scroll-hint { display: none; }
 }

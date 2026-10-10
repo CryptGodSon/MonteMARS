@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ============================================
+    // SKOK DO TREŚCI (linki z menu: strona.html#tresc)
+    // ============================================
+    // Natychmiastowy skok z pominięciem hero — bez płynnego przewijania przez animację
+    const jumpToContent = () => {
+        if (location.hash !== '#tresc') return;
+        const target = document.getElementById('tresc');
+        if (!target) return;
+        const root = document.documentElement;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo(0, target.getBoundingClientRect().top + window.pageYOffset);
+        root.style.scrollBehavior = '';
+    };
+    jumpToContent();
+
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 

@@ -8,7 +8,7 @@
         content="Projekt MONTE - Mars Orbital Network Terraform Exploration. Oficjalna strona programu kolonizacji i terraformacji Marsa.">
     <title>MONTE PROJECT</title>
     <link rel="icon" type="image/png" href="icon/faviconmars.png">
-    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="css/style.css?v=1.3">
     <style>
         .lang-switcher {
             display: flex;
@@ -53,12 +53,12 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="misja.html" data-i18n="nav_misja">MISJA</a>
-            <a href="technologia.html" data-i18n="nav_technologia">TECHNOLOGIA</a>
-            <a href="kolonizacja.html" data-i18n="nav_kolonizacja">KOLONIZACJA</a>
-            <a href="zasoby.html" data-i18n="nav_zasoby">ZASOBY</a>
-            <a href="zagrozenia.html" data-i18n="nav_zagrozenia">ZAGROŻENIA</a>
-            <a href="os-czasu.html" data-i18n="nav_os_czasu">OŚ CZASU</a>
+            <a href="misja.html#tresc" data-i18n="nav_misja">MISJA</a>
+            <a href="technologia.html#tresc" data-i18n="nav_technologia">TECHNOLOGIA</a>
+            <a href="kolonizacja.html#tresc" data-i18n="nav_kolonizacja">KOLONIZACJA</a>
+            <a href="zasoby.html#tresc" data-i18n="nav_zasoby">ZASOBY</a>
+            <a href="zagrozenia.html#tresc" data-i18n="nav_zagrozenia">ZAGROŻENIA</a>
+            <a href="os-czasu.html#tresc" data-i18n="nav_os_czasu">OŚ CZASU</a>
 
             <div class="lang-switcher">
                 <a href="#" class="lang-btn active" data-lang="pl">PL</a>
@@ -215,6 +215,7 @@
             <div class="kardashev-wrapper">
                 <!-- Lewa nawigacja -->
                 <nav class="kardashev-nav">
+                    <div class="kardashev-progress"><div class="kardashev-progress-fill"></div></div>
                     <div class="nav-header">
                         <span class="nav-label" data-i18n="kardashev_level">POZIOM ROZWOJU</span>
                     </div>
@@ -243,54 +244,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="kardashev-scroll-hint" id="kardashev-scroll-hint">
+                <span data-i18n="scroll_down">PRZEWIŃ</span>
+                <div class="ksh-line"></div>
+            </div>
         </section>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const btns = document.querySelectorAll('.kardashev-btn');
-                const backgrounds = document.querySelectorAll('.kardashev-bg');
-                const mainDesc = document.getElementById('desc-text-main');
-
-                btns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const type = btn.getAttribute('data-type');
-                        if (btn.classList.contains('active')) return;
-
-                        // Czyścimy wszystko
-                        btns.forEach(b => b.classList.remove('active'));
-                        backgrounds.forEach(bg => bg.classList.remove('active'));
-
-                        // Aktywujemy
-                        btn.classList.add('active');
-                        document.getElementById(`bg-${type}`).classList.add('active');
-
-                        // Zaawansowana animacja tekstu (Blur + Slide + Scale)
-                        mainDesc.style.opacity = '0';
-                        mainDesc.style.filter = 'blur(15px)';
-                        mainDesc.style.transform = 'translateY(30px) scale(0.95)';
-
-                        setTimeout(() => {
-                            // Text update is now handled by i18n.js
-                            mainDesc.style.opacity = '1';
-                            mainDesc.style.filter = 'blur(0px)';
-                            mainDesc.style.transform = 'translateY(0) scale(1)';
-                        }, 500);
-                    });
-                });
-            });
-        </script>
     </main>
 
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-logo">MONTE Projekt</div>
             <div class="footer-links">
-                <a href="misja.html" data-i18n="nav_misja">Misja</a>
-                <a href="technologia.html" data-i18n="nav_technologia">Technologia</a>
-                <a href="kolonizacja.html" data-i18n="nav_kolonizacja">Kolonizacja</a>
-                <a href="zasoby.html" data-i18n="nav_zasoby">Zasoby</a>
-                <a href="zagrozenia.html" data-i18n="nav_zagrozenia">Zagrożenia</a>
-                <a href="os-czasu.html" data-i18n="nav_os_czasu">Oś Czasu</a>
+                <a href="misja.html#tresc" data-i18n="nav_misja">Misja</a>
+                <a href="technologia.html#tresc" data-i18n="nav_technologia">Technologia</a>
+                <a href="kolonizacja.html#tresc" data-i18n="nav_kolonizacja">Kolonizacja</a>
+                <a href="zasoby.html#tresc" data-i18n="nav_zasoby">Zasoby</a>
+                <a href="zagrozenia.html#tresc" data-i18n="nav_zagrozenia">Zagrożenia</a>
+                <a href="os-czasu.html#tresc" data-i18n="nav_os_czasu">Oś Czasu</a>
             </div>
             <div class="footer-copyright">
                 <span data-i18n="footer_copyright">&copy; 2026 MONTE. Czyniąc ludzkość gatunkiem
@@ -301,9 +273,150 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- GSAP — animacja sekcji Kardashev sterowana scrollem -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="js/script.js?v=1.3"></script>
     <script src="js/translations.js"></script>
-    <script src="js/i18n.js"></script>
+    <script src="js/i18n.js?v=1.3"></script>
+
+    <script>
+    (function () {
+        const container = document.getElementById('kardashev');
+        const btns = Array.prototype.slice.call(document.querySelectorAll('.kardashev-btn'));
+        const mainDesc = document.getElementById('desc-text-main');
+        const hint = document.getElementById('kardashev-scroll-hint');
+        const fill = document.querySelector('.kardashev-progress-fill');
+        if (!container || !btns.length || !mainDesc) return;
+
+        const types = ['type1', 'type2', 'type3'];
+        const bgSel = { type1: '#bg-type1', type2: '#bg-type2', type3: '#bg-type3' };
+
+        function lang() {
+            return window.i18n ? window.i18n.lang : (localStorage.getItem('monte_lang') || 'pl');
+        }
+        function descFor(type) {
+            const dict = window.kardashevTranslations && window.kardashevTranslations[lang()];
+            return (dict && dict[type]) || mainDesc.innerHTML;
+        }
+
+        let currentStage = -1;
+        function setStage(idx, animate) {
+            if (idx === currentStage) return;
+            currentStage = idx;
+            const type = types[idx];
+            btns.forEach(function (b, i) { b.classList.toggle('active', i === idx); });
+            const html = descFor(type);
+            if (animate && window.gsap) {
+                gsap.fromTo(mainDesc,
+                    { opacity: 0, filter: 'blur(14px)', y: 28 },
+                    { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.55, ease: 'power2.out', overwrite: true,
+                      onStart: function () { mainDesc.innerHTML = html; } });
+            } else {
+                mainDesc.innerHTML = html;
+            }
+        }
+
+        // --- Fallback bez GSAP: zwykłe przełączanie klikiem ---
+        if (!window.gsap) {
+            const bgs = document.querySelectorAll('.kardashev-bg');
+            setStage(0, false);
+            btns.forEach(function (b, i) {
+                b.addEventListener('click', function () {
+                    bgs.forEach(function (bg) { bg.classList.remove('active'); });
+                    const bg = document.getElementById('bg-' + types[i]);
+                    if (bg) bg.classList.add('active');
+                    setStage(i, false);
+                });
+            });
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+        const mm = gsap.matchMedia();
+
+        // === DESKTOP: pinowana sekcja sterowana scrollem ===
+        mm.add('(min-width: 1101px)', function () {
+            container.classList.add('gsap-enabled');
+
+            // Stany początkowe teł — kolejne tła startują "z bliska" (efekt oddalania)
+            gsap.set(bgSel.type1, { opacity: 0.7, scale: 1.35 });
+            gsap.set(bgSel.type2, { opacity: 0, scale: 1.9 });
+            gsap.set(bgSel.type3, { opacity: 0, scale: 1.9 });
+            currentStage = -1;
+            setStage(0, false);
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: container,
+                    start: 'top top',
+                    end: function () { return '+=' + (window.innerHeight * 2.8); },
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                    onUpdate: function (self) {
+                        const p = self.progress;
+                        const idx = p < 1 / 3 ? 0 : (p < 2 / 3 ? 1 : 2);
+                        setStage(idx, true);
+                        if (hint) gsap.set(hint, { opacity: p > 0.04 ? 0 : 1 });
+                    }
+                }
+            });
+
+            // TYP I -> TYP II (oddalanie od Ziemi ku Słońcu)
+            tl.to(bgSel.type1, { opacity: 0, scale: 0.6, ease: 'none', duration: 0.32 }, 0.18)
+              .to(bgSel.type2, { opacity: 0.7, scale: 1.1, ease: 'none', duration: 0.32 }, 0.18)
+            // TYP II -> TYP III (oddalanie ku galaktyce)
+              .to(bgSel.type2, { opacity: 0, scale: 0.55, ease: 'none', duration: 0.32 }, 0.50)
+              .to(bgSel.type3, { opacity: 0.78, scale: 1.05, ease: 'none', duration: 0.32 }, 0.50)
+            // pasek postępu rozciąga oś czasu do pełnej długości (0..1)
+              .fromTo(fill, { scaleY: 0 }, { scaleY: 1, ease: 'none', duration: 1 }, 0);
+
+            // Klik w dany typ => płynny przeskok do środka jego etapu
+            const st = tl.scrollTrigger;
+            const handlers = btns.map(function (b, i) {
+                const h = function () {
+                    const center = (i * 2 + 1) / 6;
+                    window.scrollTo({ top: st.start + center * (st.end - st.start), behavior: 'smooth' });
+                };
+                b.style.cursor = 'pointer';
+                b.addEventListener('click', h);
+                return h;
+            });
+
+            return function () {
+                handlers.forEach(function (h, i) { btns[i].removeEventListener('click', h); });
+                container.classList.remove('gsap-enabled');
+                currentStage = -1;
+                gsap.set([bgSel.type1, bgSel.type2, bgSel.type3], { clearProps: 'all' });
+                if (fill) gsap.set(fill, { clearProps: 'all' });
+                if (hint) gsap.set(hint, { clearProps: 'all' });
+            };
+        });
+
+        // === WĄSKIE EKRANY: bez pinowania, przełączanie klikiem ===
+        mm.add('(max-width: 1100px)', function () {
+            const bgs = document.querySelectorAll('.kardashev-bg');
+            currentStage = -1;
+            setStage(0, false);
+            const handlers = btns.map(function (b, i) {
+                const h = function () {
+                    bgs.forEach(function (bg) { bg.classList.remove('active'); });
+                    const bg = document.getElementById('bg-' + types[i]);
+                    if (bg) bg.classList.add('active');
+                    setStage(i, true);
+                };
+                b.addEventListener('click', h);
+                return h;
+            });
+            return function () {
+                handlers.forEach(function (h, i) { btns[i].removeEventListener('click', h); });
+            };
+        });
+    })();
+    </script>
 </body>
 
 </html>
